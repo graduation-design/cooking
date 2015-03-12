@@ -9,6 +9,7 @@
   <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
   <!-- build:css styles/main.css -->
+  <!--<link rel="stylesheet" href="styles/reset.css">-->
   <link rel="stylesheet" href="styles/main.css">
   <!-- endbuild-->
 
@@ -22,48 +23,52 @@
 </head>
 
 <body unresolved fullbleed layout vertical>
-  <template is="auto-binding" id="app">
+<template is="auto-binding" id="app">
+  <top-nav>
+    <nav-item url="#">首页</nav-item>
+    <nav-item url="#">菜谱</nav-item>
+    <nav-item url="#">朋友圈</nav-item>
+  </top-nav>
+  <div class="main-wrapper">
+    <images-player class="banner">
+      <a><img src="http://i1.douguo.net/upload/banners/1425868945.jpg"/></a>
+      <a><img src="http://i1.douguo.net/upload/banners/1425456043.jpg"/></a>
+      <a><img src="http://i1.douguo.net/upload/banners/1425551758.png"/></a>
+      <a><img src="http://i1.douguo.net/upload/banners/1425548680.jpg"/></a>
+    </images-player>
+    <div class="id-card"></div>
 
-    <core-drawer-panel>
+    <section class="sec-wrap">
+      <h2>热门菜谱</h2>
+      <div class="list">
+        <cookery-pit></cookery-pit>
+        <cookery-pit></cookery-pit>
+        <cookery-pit></cookery-pit>
+        <cookery-pit></cookery-pit>
+        <cookery-pit></cookery-pit>
+        <cookery-pit></cookery-pit>
+        <cookery-pit></cookery-pit>
+        <cookery-pit></cookery-pit>
+      </div>
+    </section>
 
-      <!-- Drawer -->
-      <core-header-panel drawer>
+    <section class="sec-wrap">
+      <h2>热门知识</h2>
+      <div class="list">
+        <knowledge-pit img="http://cp1.douguo.net/upload/caiku/a/b/4/125_ab2a682b14435f8ae815c226057f9984.jpg">吃多了，肚子疼</knowledge-pit>
+        <knowledge-pit img="http://cp1.douguo.net/upload/caiku/a/b/4/125_ab2a682b14435f8ae815c226057f9984.jpg"></knowledge-pit>
+        <knowledge-pit img="http://cp1.douguo.net/upload/caiku/a/b/4/125_ab2a682b14435f8ae815c226057f9984.jpg"></knowledge-pit>
+        <knowledge-pit img="http://cp1.douguo.net/upload/caiku/a/b/4/125_ab2a682b14435f8ae815c226057f9984.jpg"></knowledge-pit>
+        <knowledge-pit img="http://cp1.douguo.net/upload/caiku/a/b/4/125_ab2a682b14435f8ae815c226057f9984.jpg"></knowledge-pit>
+        <knowledge-pit img="http://cp1.douguo.net/upload/caiku/a/b/4/125_ab2a682b14435f8ae815c226057f9984.jpg">吃多了，肚子疼吃多了，肚子疼吃多了，肚子疼吃多了，肚子疼吃多了，肚子疼吃多了，肚子疼吃多了，肚子疼吃多了，肚子疼吃多了，肚子疼吃多了，肚子疼吃多了，肚子疼吃多了，肚子疼吃多了，肚子疼吃多了，肚子疼吃多了，肚子疼吃多了，肚子疼吃多了，肚子疼吃多了，肚子疼吃多了，肚子疼吃多了，肚子疼吃多了，肚子疼吃多了，肚子疼吃多了，肚子疼吃多了，肚子疼吃多了，肚子疼吃多了，肚子疼吃多了，肚子疼吃多了，肚子疼吃多了，肚子疼吃多了，肚子疼吃多了，肚子疼吃多了，肚子疼吃多了，肚子疼吃多了，肚子疼吃多了，肚子疼</knowledge-pit>
+      </div>
+    </section>
+  </div>
+</template>
 
-        <!-- Drawer Toolbar -->
-        <core-toolbar>Menu</core-toolbar>
-
-        <!-- Drawer Content -->
-        <core-menu selected="0">
-          <core-item label="Yo"></core-item>
-          <core-item label="Polymer"></core-item>
-          <core-item label="App"></core-item>
-        </core-menu>
-
-      </core-header-panel>
-
-      <!-- Main -->
-      <core-header-panel main>
-
-        <!-- Main Toolbar -->
-        <core-toolbar>
-          <paper-icon-button icon="menu" core-drawer-toggle></paper-icon-button>
-          <span>{{appName}}</span>
-        </core-toolbar>
-
-        <!-- Main Content -->
-        <div class="hero-unit">
-          <yo-greeting></yo-greeting>
-          <p>You now have</p>
-          <yo-list></yo-list>
-        </div>
-      </core-header-panel>
-    </core-drawer-panel>
-
-  </template>
-
-  <!-- build:js scripts/app.js -->
-  <script src="scripts/app.js"></script>
-  <!-- endbuild-->
+<!-- build:js scripts/app.js -->
+<script src="scripts/app.js"></script>
+<!-- endbuild-->
 </body>
 
 </html>

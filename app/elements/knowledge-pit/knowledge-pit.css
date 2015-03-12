@@ -1,0 +1,22 @@
+:host {
+  display: inline-block;
+  font-size: medium;
+  height: 125px;
+  width: 450px;
+  border: 1px solid #999999;
+  margin: 10px 10px 0 0;
+}
+
+#pic, #content{
+  display: inline-block;
+  vertical-align: top;
+}
+
+#content{
+  padding: 10px;
+  height: 105px;
+  width: 300px;
+  color: #666;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
