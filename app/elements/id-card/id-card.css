@@ -1,0 +1,57 @@
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+:host {
+  display: inline-block;
+  height: 202px;
+  width: 218px;
+  padding: 10px;
+  vertical-align: top;
+  background-color: #cccccc;
+}
+
+#id-info {
+  border-bottom: 1px solid #999999;
+}
+
+.avatar-pic{
+  width: 80px;
+  height: 80px;
+}
+
+.signature{
+  vertical-align: top;
+  display: inline-block;
+  padding-left: 8px;
+  height: 80px;
+  width: 130px;
+}
+
+.mid-wrap{
+  display: table-cell;
+  height: 80px;
+  vertical-align: middle;
+}
+
+.mid-wrap span{
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.func-list {
+  padding-top: 8px;
+}
+
+.func-list li{
+  width: 108px;
+  display: inline-block;
+  text-align: center;
+}
+
+.icon {
+  display: block;
+  height: 32px;
+  background: url(http://static.xiachufang.com/pic/2013/cat_icons.png) 36px 0 no-repeat;
+}

@@ -36,11 +36,9 @@ body {
   margin-top: 20px;
 }
 
-.id-card {
-  display: inline-block;
-  height: 222px;
-  width: 238px;
-  background-color: skyblue;
+id-card {
+  margin-top: 20px;
+  font-size: 14px;
 }
 
 .sec-wrap {
