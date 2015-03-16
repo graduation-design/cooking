@@ -21,6 +21,7 @@ ul {
 .avatar-pic{
   width: 80px;
   height: 80px;
+  border-radius: 6px;
 }
 
 .signature{
