@@ -10,8 +10,8 @@
 }
 
 :host(:hover) {
-  border-color: #e67e22;
-  outline: 1px solid #e67e22;
+  border-color: #e74c3c;
+  outline: 1px solid #e74c3c;
 }
 
 :host(:hover)  .cookbook-info{
@@ -23,14 +23,10 @@
   height: 220px;
 }
 
-.cookbook-pic:hover + div {
-
-}
-
 .cookbook-info {
   position: relative;
   padding: 4px 8px;
-  background-color: #e67e22;
+  background-color: #e74c3c;
   top: 0;
   opacity: 0.9;
   color: #fff;
