@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>秀厨</title>
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+  <!-- build:css styles/main.css -->
+  <link rel="stylesheet" href="styles/main.css">
+  <!-- endbuild-->
+
+  <!-- build:css styles/cookbook.css -->
+  <link rel="stylesheet" href="styles/cookbook.css">
+  <!-- endbuild-->
+
+  <!-- build:js bower_components/webcomponentsjs/webcomponents.min.js -->
+  <script src="bower_components/webcomponentsjs/webcomponents.js"></script>
+  <!-- endbuild -->
+
+  <!-- will be replaced with elements/elements.vulcanized.html -->
+  <link rel="import" href="elements/elements.html">
+  <!-- endreplace-->
+</head>
+
+<body unresolved fullbleed layout vertical>
+<template is="auto-binding" id="cookbook">
+  <top-nav>
+    <nav-item url="#">首页</nav-item>
+    <nav-item url="#">菜谱</nav-item>
+    <nav-item url="#">朋友圈</nav-item>
+  </top-nav>
+  <div class="main-wrapper">
+    <img src="http://lorempixel.com/800/450/food"/>
+  </div>
+</template>
+
+<!-- build:js scripts/app.js -->
+<script src="scripts/cookbook.js"></script>
+<!-- endbuild-->
+</body>
+
+</html>
