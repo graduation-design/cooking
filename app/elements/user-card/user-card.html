@@ -1,0 +1,28 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<polymer-element name="user-card" attributes="avatar">
+  <template>
+    <link rel="stylesheet" href="user-card.css">
+    <div id="id-info">
+      <img class="avatar-pic" src="{{avatar}}"/><span class="signature">
+      <span class="mid-wrap"><span>
+        <content></content>
+      </span></span></span>
+    </div>
+    <div class="self-func">
+      <ul class="func-list">
+        <li><i class="icon cookbook"></i><span class="name">菜谱</span><span class="num">(12)</span></li><li>
+        <i class="icon fans"></i><span class="name">粉丝</span><span class="num">(1235)</span></li><li>
+        <i class="icon knowledge"></i><span class="name">知识</span><span class="num">(12)</span></li><li>
+        <i class="icon share"></i><span class="name">分享</span><span class="num">(123)</span></li>
+      </ul>
+    </div>
+  </template>
+  <script>
+    (function () {
+      Polymer({
+        // define element prototype here
+      });
+    })();
+  </script>
+</polymer-element>

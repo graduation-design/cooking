@@ -22,23 +22,18 @@ input, textarea, select {
 body {
   background: #fafafa;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 14px;
   color: #333;
 }
 
 .main-wrapper {
   width: 940px;
   margin: 50px auto 0;
-  font-size: 0;
+  padding-top: 30px;
 }
 
 .banner {
   display: inline-block;
-  margin-top: 20px;
-}
-
-id-card {
-  margin-top: 20px;
-  font-size: 14px;
 }
 
 .sec-wrap {
