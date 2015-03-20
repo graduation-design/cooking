@@ -1,0 +1,72 @@
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+:host {
+  display: inline-block;
+  height: 208px;
+  width: 217px;
+  padding: 6px 10px;
+  vertical-align: top;
+  border: 1px solid #cccccc;
+}
+
+#id-info {
+  border-bottom: 1px solid #999999;
+  padding-bottom: 4px;
+}
+
+.avatar-pic{
+  width: 80px;
+  height: 80px;
+  border-radius: 6px;
+}
+
+.signature{
+  vertical-align: top;
+  display: inline-block;
+  padding-left: 8px;
+  height: 80px;
+  width: 129px;
+}
+
+.mid-wrap{
+  display: table-cell;
+  height: 80px;
+  vertical-align: middle;
+}
+
+.mid-wrap span{
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.func-list li{
+  margin-top: 10px;
+  width: 108px;
+  display: inline-block;
+  text-align: center;
+}
+
+.icon {
+  display: block;
+  height: 32px;
+  background: url(http://static.xiachufang.com/pic/2013/cat_icons.png) 36px 0 no-repeat;
+}
+
+.cookbook {
+  background-position: 36px -403px;
+}
+
+.fans {
+  background-position: 36px -683px;
+}
+
+.knowledge {
+  background-position: 36px -45px;
+}
+
+.share {
+  background-position: 36px -481px;
+}
