@@ -1,3 +1,6 @@
+body{
+  background-color: #f0f0f0;
+}
 .cookbook_title{
   font-size: 24px;
   font-weight: bold;
@@ -13,6 +16,7 @@
 .other_info{
   float: right;
   width: 340px;
+  text-align: center;
 }
 
 .food_cover{
@@ -23,7 +27,17 @@
   margin-top: 30px;
 }
 
+.card {
+  background-color: #fafafa;
+  border-radius: 3px;
+  box-shadow: 2px 2px 6px #999;
+}
+
 .story {
+  padding: 10px 0;
+}
+
+.story .story_content{
   padding: 10px 14px;
 }
 
@@ -34,9 +48,17 @@
 
 .ingredients_list li{
   width: 282px;
-  border: 1px solid #cccccc;
   padding: 4px 8px;
   display: inline-block;
+  border-top: 1px solid #dddddd;
+}
+
+.ingredients_list li:nth-child(1),.ingredients_list li:nth-child(2){
+  border-top: none;
+}
+
+.ingredients_list li:nth-child(odd){
+  border-right: 1px solid #dddddd;
 }
 
 .ingredients_list .food_amount{
@@ -46,12 +68,13 @@
 .step_list li{
   font-size: 0;
   padding: 12px 0;
-  border-bottom: 1px solid #eeeeee;
+  margin: 0 14px;
+  border-bottom: 1px solid #dddddd;
 }
 
 .step_detail{
   font-size: 14px;
-  width: 400px;
+  width: 370px;
   display: inline-block;
   vertical-align: top;
 }
