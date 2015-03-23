@@ -5,15 +5,41 @@ ul {
 }
 :host {
   display: inline-block;
-  height: 208px;
-  width: 217px;
-  padding: 6px 10px;
+  width: 300px;
+  padding: 16px 10px;
   vertical-align: top;
-  border: 1px solid #cccccc;
+  border: 1px solid #dfded7;
+  text-align: left;
+}
+
+#user-name {
+  display: inline-block;
+  vertical-align: top;
+  max-width: 120px;
+  padding: 10px 6px;
+  text-decoration: none;
+  color: #666;
+}
+
+.follow-status {
+  vertical-align: top;
+  display: inline-block;
+  width: 80px;
+  padding: 10px 0;
+  text-decoration: none;
+  color: #fff;
+  background-color: #e74c3c;
+  text-align: center;
+  float: right;
+  margin-top: 20px;
+}
+
+.followed {
+  background-color: #e0e0e0;
+  color: #666;
 }
 
 #id-info {
-  border-bottom: 1px solid #999999;
   padding-bottom: 4px;
 }
 
@@ -24,49 +50,38 @@ ul {
 }
 
 .signature{
-  vertical-align: top;
-  display: inline-block;
-  padding-left: 8px;
-  height: 80px;
-  width: 129px;
-}
-
-.mid-wrap{
-  display: table-cell;
-  height: 80px;
-  vertical-align: middle;
-}
-
-.mid-wrap span{
-  display: inline-block;
-  vertical-align: middle;
+  text-align: left;
+  padding: 10px 6px;
+  border-top: 1px solid #dfded7;
+  border-bottom: 1px solid #dfded7;
 }
 
 .func-list li{
   margin-top: 10px;
-  width: 108px;
+  width: 72px;
   display: inline-block;
   text-align: center;
+  font-size: 12px;
 }
 
 .icon {
   display: block;
   height: 32px;
-  background: url(http://static.xiachufang.com/pic/2013/cat_icons.png) 36px 0 no-repeat;
+  background: url(http://static.xiachufang.com/pic/2013/cat_icons.png)no-repeat;
 }
 
 .cookbook {
-  background-position: 36px -403px;
+  background-position: 18px -403px;
 }
 
 .fans {
-  background-position: 36px -683px;
+  background-position: 18px -683px;
 }
 
 .knowledge {
-  background-position: 36px -45px;
+  background-position: 18px -45px;
 }
 
 .share {
-  background-position: 36px -481px;
+  background-position: 18px -481px;
 }
