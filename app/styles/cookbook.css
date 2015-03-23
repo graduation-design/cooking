@@ -10,12 +10,14 @@ body {
 }
 
 .main_info {
+  display: inline-block;
   width: 600px;
-  float: left;
+  vertical-align: top;
 }
 
 .other_info {
-  float: right;
+  display: inline-block;
+  vertical-align: top;
   width: 340px;
   text-align: center;
 }
