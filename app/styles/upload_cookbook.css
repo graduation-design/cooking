@@ -1,0 +1,50 @@
+h1 {
+  font-size: 24px;
+  text-indent: 148px;
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 18px;
+  margin-top: 20px;
+}
+
+hr {
+  margin: 20px auto;
+  display: block; height: 1px;
+  border: 0; border-top: 1px solid #deded3;
+}
+
+input, textarea {
+  border: 1px solid #deded3;
+}
+
+.editor-container {
+  width: 640px;
+  padding: 20px 40px;
+  margin: 0 auto;
+  border-radius: 6px;
+  background-color: #fafafa;
+  box-shadow: 3px 3px 6px #ccc;
+  min-height: 900px;
+}
+
+#cookbook-title {
+  width: 618px;
+  border-radius: 3px;
+  padding: 16px 10px;
+}
+
+#main-pic-upload {
+  width: 600px;
+  height: 400px;
+  background-color: #ffebd7;
+  margin: 0 auto;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+#introduction {
+  width: 640px;
+  margin-top: 20px;
+}

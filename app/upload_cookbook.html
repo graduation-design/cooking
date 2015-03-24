@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>秀厨_创建菜谱</title>
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+  <!-- build:css styles/main.css -->
+  <link rel="stylesheet" href="styles/main.css">
+  <!-- endbuild-->
+
+  <!-- build:css styles/cookbook.css -->
+  <link rel="stylesheet" href="styles/upload_cookbook.css">
+  <!-- endbuild-->
+
+  <!-- build:js bower_components/webcomponentsjs/webcomponents.min.js -->
+  <script src="bower_components/webcomponentsjs/webcomponents.js"></script>
+  <!-- endbuild -->
+
+  <!-- will be replaced with elements/elements.vulcanized.html -->
+  <link rel="import" href="elements/elements.html">
+  <!-- endreplace-->
+</head>
+
+<body unresolved fullbleed layout vertical>
+<template is="auto-binding" id="upload_cookbook">
+  <top-nav>
+    <nav-item url="#">首页</nav-item>
+    <nav-item url="#">菜谱</nav-item>
+    <nav-item url="#">朋友圈</nav-item>
+  </top-nav>
+  <div class="main-wrapper">
+    <h1>创建菜谱</h1>
+
+    <div class="editor-container">
+      <form action="#" method="post">
+        <input type="text" name="cookbook-title" id="cookbook-title" placeholder="菜谱名称"/>
+        <hr/>
+        <div id="main-pic-upload"></div>
+        <textarea name="introduction" id="introduction" cols="30" rows="10" placeholder="介绍介绍你的美食吧，相关故事也可以哦"></textarea>
+        <h2>食材</h2>
+        <ul class="ingredients">
+          <li><input type="text"/><input type="text"/><a class="delete-ingredients" href="javascript:void (0)"></a>
+          </li>
+          <li><input type="text"/><input type="text"/><a class="delete-ingredients" href="javascript:void (0)"></a>
+          </li>
+          <li><input type="text"/><input type="text"/><a class="delete-ingredients" href="javascript:void (0)"></a>
+          </li>
+        </ul>
+        <h2>步骤</h2>
+        <ul class="steps">
+          <li><img class="step-pic-upload" src=""/><span class="step-num"></span><textarea
+            class="step-content" name="step_content[]" cols="30" rows="10"></textarea>
+          </li>
+          <li><img class="step-pic-upload" src=""/><span class="step-num"></span><textarea
+            class="step-content" name="step_content[]" cols="30" rows="10"></textarea>
+          </li>
+          <li><img class="step-pic-upload" src=""/><span class="step-num"></span><textarea
+            class="step-content" name="step_content[]" cols="30" rows="10"></textarea>
+          </li>
+        </ul>
+        <h2>小贴士</h2>
+        <textarea name="tips" id="tips" cols="30" rows="10"></textarea>
+      </form>
+    </div>
+  </div>
+</template>
+
+<!-- build:js scripts/app.js -->
+<script src="scripts/upload_cookbook.js"></script>
+<!-- endbuild-->
+</body>
+
+</html>
