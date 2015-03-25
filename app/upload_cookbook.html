@@ -41,29 +41,36 @@
         <hr/>
         <div id="main-pic-upload"></div>
         <textarea name="introduction" id="introduction" cols="30" rows="10" placeholder="介绍介绍你的美食吧，相关故事也可以哦"></textarea>
+
         <h2>食材</h2>
         <ul class="ingredients">
-          <li><input type="text"/><input type="text"/><a class="delete-ingredients" href="javascript:void (0)"></a>
+          <li><input name="food_name[]" class="food_name" type="text"/><input name="food_quantity[]"
+                                                                              class="food_quantity" type="text"/><a
+            class="delete-ingredients" href="javascript:void (0)">X</a>
           </li>
-          <li><input type="text"/><input type="text"/><a class="delete-ingredients" href="javascript:void (0)"></a>
+          <li><input name="food_name[]" class="food_name" type="text"/><input name="food_quantity[]"
+                                                                              class="food_quantity" type="text"/><a
+            class="delete-ingredients" href="javascript:void (0)">X</a>
           </li>
-          <li><input type="text"/><input type="text"/><a class="delete-ingredients" href="javascript:void (0)"></a>
+          <li><input name="food_name[]" class="food_name" type="text"/><input name="food_quantity[]"
+                                                                              class="food_quantity" type="text"/><a
+            class="delete-ingredients" href="javascript:void (0)">X</a>
           </li>
         </ul>
         <h2>步骤</h2>
         <ul class="steps">
-          <li><img class="step-pic-upload" src=""/><span class="step-num"></span><textarea
-            class="step-content" name="step_content[]" cols="30" rows="10"></textarea>
+          <li><span class="step-pic-upload"></span><span class="step-num">1</span><textarea
+            class="step-content" name="step_content[]"></textarea>
           </li>
-          <li><img class="step-pic-upload" src=""/><span class="step-num"></span><textarea
-            class="step-content" name="step_content[]" cols="30" rows="10"></textarea>
+          <li><span class="step-pic-upload"></span><span class="step-num">2</span><textarea
+            class="step-content" name="step_content[]"></textarea>
           </li>
-          <li><img class="step-pic-upload" src=""/><span class="step-num"></span><textarea
-            class="step-content" name="step_content[]" cols="30" rows="10"></textarea>
+          <li><span class="step-pic-upload"></span><span class="step-num">3</span><textarea
+            class="step-content" name="step_content[]"></textarea>
           </li>
         </ul>
         <h2>小贴士</h2>
-        <textarea name="tips" id="tips" cols="30" rows="10"></textarea>
+        <textarea name="tips" id="tips"></textarea>
       </form>
     </div>
   </div>
