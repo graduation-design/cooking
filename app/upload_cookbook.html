@@ -39,38 +39,64 @@
       <form action="#" method="post">
         <input type="text" name="cookbook-title" id="cookbook-title" placeholder="菜谱名称"/>
         <hr/>
-        <div id="main-pic-upload"></div>
+        <div id="main-pic-upload">
+          <div class="plus-icon">
+            <span class="iconicfill-plus-alt"></span>
+          </div>
+          <div class="upload-note">上传美食的成品图（建议尺寸：600x400）</div>
+        </div>
         <textarea name="introduction" id="introduction" cols="30" rows="10" placeholder="介绍介绍你的美食吧，相关故事也可以哦"></textarea>
 
         <h2>食材</h2>
         <ul class="ingredients">
           <li><input name="food_name[]" class="food_name" type="text"/><input name="food_quantity[]"
                                                                               class="food_quantity" type="text"/><a
-            class="delete-ingredients" href="javascript:void (0)">X</a>
+            class="delete-ingredients" href="javascript:void (0)" tabindex="-1">X</a>
           </li>
           <li><input name="food_name[]" class="food_name" type="text"/><input name="food_quantity[]"
                                                                               class="food_quantity" type="text"/><a
-            class="delete-ingredients" href="javascript:void (0)">X</a>
+            class="delete-ingredients" href="javascript:void (0)" tabindex="-1">X</a>
           </li>
           <li><input name="food_name[]" class="food_name" type="text"/><input name="food_quantity[]"
                                                                               class="food_quantity" type="text"/><a
-            class="delete-ingredients" href="javascript:void (0)">X</a>
+            class="delete-ingredients" href="javascript:void (0)" tabindex="-1">X</a>
           </li>
         </ul>
         <h2>步骤</h2>
         <ul class="steps">
-          <li><span class="step-pic-upload"></span><span class="step-num">1</span><textarea
-            class="step-content" name="step_content[]"></textarea>
+          <li>
+            <div class="step-pic-upload">
+              <div class="plus-icon">
+            <span class="iconicfill-plus-alt"></span>
+          </div>
+          <div class="upload-note">添加步骤图</div>
+            </div><div class="step-content">
+            <textarea name="step_content[]"></textarea>
+          </div>
           </li>
-          <li><span class="step-pic-upload"></span><span class="step-num">2</span><textarea
-            class="step-content" name="step_content[]"></textarea>
+          <li>
+            <div class="step-pic-upload">
+              <div class="plus-icon">
+            <span class="iconicfill-plus-alt"></span>
+          </div>
+          <div class="upload-note">添加步骤图</div>
+            </div><div class="step-content">
+            <textarea name="step_content[]"></textarea>
+          </div>
           </li>
-          <li><span class="step-pic-upload"></span><span class="step-num">3</span><textarea
-            class="step-content" name="step_content[]"></textarea>
+          <li>
+            <div class="step-pic-upload">
+              <div class="plus-icon">
+            <span class="iconicfill-plus-alt"></span>
+          </div>
+          <div class="upload-note">添加步骤图</div>
+            </div><div class="step-content">
+            <textarea name="step_content[]"></textarea>
+          </div>
           </li>
         </ul>
         <h2>小贴士</h2>
-        <textarea name="tips" id="tips"></textarea>
+        <textarea name="tips" id="tips" rows="4"></textarea>
       </form>
     </div>
   </div>

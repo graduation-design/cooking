@@ -29,7 +29,7 @@
 .card {
   background-color: #fafafa;
   border-radius: 3px;
-  box-shadow: 2px 2px 6px #999;
+  box-shadow: 2px 2px 6px #ccc;
 }
 
 .story {
@@ -64,6 +64,10 @@
   float: right;
 }
 
+.step_list {
+  counter-reset: step-counter;
+}
+
 .step_list li {
   font-size: 0;
   padding: 12px 0;
@@ -76,6 +80,14 @@
   width: 370px;
   display: inline-block;
   vertical-align: top;
+}
+
+.step_detail:before {
+  content: counter(step-counter)'.';
+  counter-increment: step-counter;
+  font-weight: bold;
+  padding-right: 8px;
+  color: #999999;
 }
 
 .step_pic {
