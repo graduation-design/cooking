@@ -1,0 +1,28 @@
+:host {
+  display: block;
+}
+
+#wrapper {
+  height: 200px;
+  font-size: 0;
+}
+
+.avatar-side {
+  display: inline-block;
+  vertical-align: top;
+  width: 88px;
+  text-align: center;
+}
+
+.avatar-pic {
+  width: 80px;
+  height: 80px;
+  margin-top: 4px;
+}
+
+.info-side {
+  display: inline-block;
+  vertical-align: top;
+  width: 552px;
+  font-size: 14px;
+}

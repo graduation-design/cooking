@@ -1,0 +1,24 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/paper-shadow/paper-shadow.html">
+
+<polymer-element name="timeline-item" attributes="avatarPic userName">
+  <template>
+    <link rel="stylesheet" href="timeline_item.css">
+    <paper-shadow z="1">
+      <div id="wrapper">
+        <div class="avatar-side">
+          <img class="avatar-pic" src="{{avatarPic}}"/>
+        </div>
+        <div class="info-side">
+          <section class="user-name">{{userName}}</section>
+        </div>
+      </div>
+    </paper-shadow>
+
+  </template>
+  <script>
+    (function () {
+      Polymer();
+    })();
+  </script>
+</polymer-element>

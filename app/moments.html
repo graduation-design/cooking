@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>秀厨_朋友圈</title>
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+  <!-- build:css styles/main.css -->
+  <link rel="stylesheet" href="styles/main.css">
+  <!-- endbuild-->
+
+  <!-- build:css styles/moments.css -->
+  <link rel="stylesheet" href="styles/moments.css">
+  <!-- endbuild-->
+
+  <!-- build:js bower_components/webcomponentsjs/webcomponents.min.js -->
+  <script src="bower_components/webcomponentsjs/webcomponents.js"></script>
+  <!-- endbuild -->
+
+  <!-- will be replaced with elements/elements.vulcanized.html -->
+  <link rel="import" href="elements/elements.html">
+  <!-- endreplace-->
+</head>
+
+<body unresolved>
+<template is="auto-binding" id="moments">
+  <top-nav>
+    <nav-item url="#">首页</nav-item>
+    <nav-item url="#">菜谱</nav-item>
+    <nav-item url="#">朋友圈</nav-item>
+  </top-nav>
+  <div class="main-wrapper">
+    <div class="timeline">
+      <timeline-item avatarPic="http://lorempixel.com/80/80/fashion/1" userName="qwerty"></timeline-item>
+      <timeline-item avatarPic="http://lorempixel.com/80/80/fashion/2" userName="兔子咩"></timeline-item>
+      <timeline-item avatarPic="http://lorempixel.com/80/80/fashion/3" userName="ottack"></timeline-item>
+      <timeline-item avatarPic="http://lorempixel.com/80/80/fashion/4" userName="W君诶嘿嘿"></timeline-item>
+      <timeline-item avatarPic="http://lorempixel.com/80/80/fashion/5" userName="Yotao"></timeline-item>
+      <timeline-item avatarPic="http://lorempixel.com/80/80/fashion/6" userName="指尖阳光"></timeline-item>
+    </div>
+  </div>
+</template>
+
+<!-- build:js scripts/moments.js -->
+<script src="scripts/moments.js"></script>
+<!-- endbuild-->
+</body>
+
+</html>

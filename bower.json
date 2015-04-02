@@ -4,7 +4,8 @@
   "dependencies": {
     "polymer": "Polymer/polymer#^0.5.4",
     "top-nav": "Lukeisme/top-nav",
-    "images-player": "Lukeisme/images-player"
+    "images-player": "Lukeisme/images-player",
+    "paper-shadow": "Polymer/paper-shadow#~0.5.5"
   },
   "devDependencies": {}
 }
