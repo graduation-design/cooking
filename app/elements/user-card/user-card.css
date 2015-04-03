@@ -3,10 +3,11 @@ ul {
   padding: 0;
   margin: 0;
 }
+
 :host {
   display: inline-block;
   width: 300px;
-  padding: 16px 10px;
+  padding: 16px 10px 0;
   vertical-align: top;
   border: 1px solid #dfded7;
   text-align: left;
@@ -21,17 +22,23 @@ ul {
   color: #666;
 }
 
-.follow-status {
-  vertical-align: top;
+#follow_btn_shadow {
   display: inline-block;
+  vertical-align: top;
+  width: 80px;
+  margin-top: 20px;
+  float: right;
+}
+
+.follow-status {
+  display: inline-block;
+  vertical-align: top;
   width: 80px;
   padding: 10px 0;
   text-decoration: none;
   color: #fff;
   background-color: #e74c3c;
   text-align: center;
-  float: right;
-  margin-top: 20px;
 }
 
 .followed {
@@ -43,31 +50,36 @@ ul {
   padding-bottom: 4px;
 }
 
-.avatar-pic{
+.avatar-pic {
   width: 80px;
   height: 80px;
   border-radius: 6px;
 }
 
-.signature{
+.signature {
   text-align: left;
   padding: 10px 6px;
   border-top: 1px solid #dfded7;
   border-bottom: 1px solid #dfded7;
 }
 
-.func-list li{
-  margin-top: 10px;
+.func-list li {
   width: 72px;
   display: inline-block;
   text-align: center;
   font-size: 12px;
+  padding: 8px 0 10px;
+}
+
+.func-list paper-shadow {
+  padding: 6px 0 6px;
+  cursor: pointer;
 }
 
 .icon {
   display: block;
   height: 32px;
-  background: url(http://static.xiachufang.com/pic/2013/cat_icons.png)no-repeat;
+  background: url(http://static.xiachufang.com/pic/2013/cat_icons.png) no-repeat;
 }
 
 .cookbook {

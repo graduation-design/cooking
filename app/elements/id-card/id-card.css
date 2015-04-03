@@ -43,11 +43,20 @@ ul {
   vertical-align: middle;
 }
 
+.func-list{
+  margin-top: 4px;
+}
+
 .func-list li{
-  margin-top: 10px;
-  width: 108px;
+  padding: 0 16px;
+  width: 76px;
   display: inline-block;
   text-align: center;
+}
+
+.func-list paper-shadow {
+  cursor: pointer;
+  padding: 5px 0;
 }
 
 .icon {
@@ -57,17 +66,17 @@ ul {
 }
 
 .cookbook {
-  background-position: 36px -403px;
+  background-position: 22px -403px;
 }
 
 .fans {
-  background-position: 36px -683px;
+  background-position: 22px -683px;
 }
 
 .knowledge {
-  background-position: 36px -45px;
+  background-position: 22px -45px;
 }
 
 .share {
-  background-position: 36px -481px;
+  background-position: 22px -481px;
 }
