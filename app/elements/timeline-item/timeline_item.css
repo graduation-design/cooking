@@ -26,3 +26,12 @@
   width: 552px;
   font-size: 14px;
 }
+
+.user-name {
+  padding-top: 4px;
+}
+
+.user-name span {
+  color: #666;
+  font-weight: bold;
+}

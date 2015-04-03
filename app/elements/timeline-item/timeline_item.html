@@ -1,7 +1,7 @@
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 <link rel="import" href="../../bower_components/paper-shadow/paper-shadow.html">
 
-<polymer-element name="timeline-item" attributes="avatarPic userName">
+<polymer-element name="timeline-item" attributes="avatarPic userName type">
   <template>
     <link rel="stylesheet" href="timeline_item.css">
     <paper-shadow z="1">
@@ -10,7 +10,10 @@
           <img class="avatar-pic" src="{{avatarPic}}"/>
         </div>
         <div class="info-side">
-          <section class="user-name">{{userName}}</section>
+          <section class="user-name"><span>{{userName}}</span>{{typeTable[type]}}:</section>
+          <section class="">
+            <content></content>
+          </section>
         </div>
       </div>
     </paper-shadow>
@@ -18,7 +21,12 @@
   </template>
   <script>
     (function () {
-      Polymer();
+      Polymer({
+        typeTable: {
+          sCookbook: "分享了一个菜谱",
+          pCookbook: "发表了一个菜谱"
+        }
+      });
     })();
   </script>
 </polymer-element>
