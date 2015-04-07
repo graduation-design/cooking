@@ -1,0 +1,26 @@
+{
+  "name": "top-nav",
+  "keywords": [
+    "seed",
+    "polymer",
+    "web-components"
+  ],
+  "main": "top-nav.html",
+  "dependencies": {
+    "polymer": "Polymer/polymer#^0.5.4",
+    "paper-ripple": "Polymer/paper-ripple#~0.5.5"
+  },
+  "devDependencies": {
+    "web-component-tester": "Polymer/web-component-tester#^2.2.3"
+  },
+  "homepage": "https://github.com/Lukeisme/top-nav",
+  "_release": "b1e43c7daf",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "b1e43c7dafbc9936cee63d5c837dc59584acf344"
+  },
+  "_source": "git://github.com/Lukeisme/top-nav.git",
+  "_target": "*",
+  "_originalSource": "Lukeisme/top-nav"
+}

@@ -1,0 +1,100 @@
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../core-pages/core-pages.html">
+<link rel="import" href="../core-selector/core-selector.html">
+
+<!--
+banner images display.
+
+##### Example
+
+    <images-player>
+      <a><img src="http://i1.douguo.net/upload/banners/1425868945.jpg"/></a>
+      <a><img src="http://i1.douguo.net/upload/banners/1425456043.jpg"/></a>
+      <a><img src="http://i1.douguo.net/upload/banners/1425551758.png"/></a>
+      <a><img src="http://i1.douguo.net/upload/banners/1425548680.jpg"/></a>
+    </images-player>
+
+@element images-player
+@blurb banner images display.
+@status alpha
+@homepage http://Lukeisme.github.io/images-player
+-->
+<polymer-element name="images-player"
+                 attributes="selected"
+                 on-tap="{{tapHandler}}">
+  <template>
+    <link rel="stylesheet" href="images-player.css">
+    <core-pages selected="{{selected}}">
+      <content id="content"></content>
+    </core-pages>
+
+    <span class="prev-btn" on-tap="{{toPrev}}">&lt;</span><span class="next-btn" on-tap="{{toNext}}">&gt;</span>
+
+    <div id="dot-wrap">
+      <core-selector selected="{{selected}}">
+        <template repeat="{{_contentNodes}}">
+          <span class="dot"></span>
+        </template>
+      </core-selector>
+    </div>
+  </template>
+  <script>
+    Polymer({
+      /**
+       * The `selected` attribute sets an initial page index
+       *
+       * @attribute selected
+       * @type int
+       * @default 0
+       */
+      selected: 0,
+
+      _contentNodes: [],
+
+      playTimer: 0,
+
+      ready: function () {
+        this._contentNodes = this._getATagNodes();
+        this._autoPlay();
+      },
+
+      _autoPlay: function(){
+        this.playTimer = this.async(function() {
+          this.toNext();
+          this._autoPlay();
+        }, null, 4000);
+      },
+
+      _getATagNodes: function () {
+        var tmpArr = [];
+        this.$.content.getDistributedNodes().array().forEach(function (item) {
+          if (item.tagName == 'A')
+            tmpArr.push(item);
+        });
+        return tmpArr;
+      },
+
+      toPrev: function () {
+        var prevIndex = this.selected - 1 < 0 ? this._contentNodes.length - 1 : this.selected - 1;
+        this.changeIndex(prevIndex);
+      },
+
+      toNext: function () {
+        this.changeIndex((this.selected + 1) % this._contentNodes.length);
+      },
+
+      changeIndex: function (index) {
+        this.selected = index;
+        if (index == this._contentNodes.length - 1) {
+          this._contentNodes[0].classList.add('begin');
+        } else {
+          this._contentNodes[0].classList.remove('begin');
+        }
+      },
+      tapHandler: function(){
+        clearTimeout(this.playTimer);
+        this._autoPlay();
+      }
+    });
+  </script>
+</polymer-element>

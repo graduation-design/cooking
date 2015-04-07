@@ -1,0 +1,80 @@
+<link rel="import" href="../polymer/polymer.html">
+
+<!--
+Element providing solution to no problem in particular.
+
+##### Example
+
+    <top-nav></top-nav>
+
+@element top-nav
+@blurb Element providing solution to no problem in particular.
+@status alpha
+@homepage http://.github.io/top-nav
+-->
+<polymer-element name="top-nav" attributes="contentWidth">
+  <template>
+    <link rel="stylesheet" href="top-nav.css">
+    <div id="nav-wrapper" style="width: {{contentWidth}}px">
+      <content select="nav-item"></content>
+    </div>
+  </template>
+  <script>
+    Polymer({
+      /**
+       * The `content-width` attribute sets an initial width of navigation
+       *
+       * @attribute content-width
+       * @type int
+       * @default '940'
+       */
+      contentWidth: 940,
+
+      /**
+       * `fancy` is a property that does something fancy.
+       *
+       * @property fancy
+       * @type bool
+       * @default false
+       */
+      fancy: false,
+
+      ready: function () {
+        // Ready is a lifecycle callback.
+        // You can do setup work in here.
+        // More info: http://www.polymer-project.org/docs/polymer/polymer.html#lifecyclemethods
+      },
+
+      /**
+       * The `sayHello` method will return a greeting.
+       *
+       * @method sayHello
+       * @param {String} greeting Pass in a specific greeting.
+       * @return {String} Returns a string greeting.
+       */
+      sayHello: function (greeting) {
+        var response = greeting || 'Hello World!';
+        return 'top-nav says, ' + response;
+      },
+
+      /**
+       * The `top-nav-lasers-success` event is fired whenever we
+       * call fireLasers.
+       *
+       * @event top-nav-lasers-success
+       * @param {Object} detail
+       *   @param {string} detail.sound An amazing sound.
+       */
+
+      /**
+       * The `fireLasers` method will fire the lasers. At least
+       * it will dispatch an event that claims lasers were fired :)
+       *
+       * @method fireLasers
+       */
+      fireLasers: function () {
+        this.fire('top-nav-lasers-success', { sound: 'Pew pew pew!' });
+      }
+    });
+  </script>
+</polymer-element>

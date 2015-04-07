@@ -1,0 +1,17 @@
+{
+  "name": "top-nav",
+  "version": "0.0.0",
+  "keywords": [
+    "seed",
+    "polymer",
+    "web-components"
+  ],
+  "main": "top-nav.html",
+  "dependencies": {
+    "polymer": "Polymer/polymer#^0.5.4",
+    "paper-ripple": "Polymer/paper-ripple#~0.5.5"
+  },
+  "devDependencies": {
+    "web-component-tester": "Polymer/web-component-tester#^2.2.3"
+  }
+}

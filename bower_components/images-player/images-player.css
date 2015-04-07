@@ -1,0 +1,87 @@
+:host {
+  display: block;
+  width: 700px;
+  height: 220px;
+  cursor: pointer;
+  overflow: hidden;
+  border: 1px solid #cccccc;
+  position: relative;
+  z-index: 1;
+}
+
+core-pages {
+  height: 100%;
+  width: 100%;
+}
+
+::content > a {
+  display: block;
+  transform: translateX(-700px);
+  transition: all 1.4s ease;
+}
+
+::content > a.core-selected + a {
+  transform: translateX(700px);
+}
+
+::content > a.begin {
+  transform: translateX(700px);
+}
+
+::content > a.core-selected {
+  transform: translateX(0);
+}
+
+.prev-btn, .next-btn {
+  display: block;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  color: #ffffff;
+  background-color: #000;
+  opacity: 0.5;
+  border-radius: 100%;
+  top: 85px;
+}
+
+.prev-btn:hover, .next-btn:hover {
+  opacity: 0.8;
+}
+
+.prev-btn {
+  left: 10px;
+}
+
+.next-btn {
+  right: 10px;
+}
+
+#dot-wrap {
+  position: relative;
+  width: 78px;
+  margin: 0 auto;
+  top: -26px;
+  border-radius: 10px;
+  background-color: #000000;
+  font-size: 0;
+  padding: 2px 0;
+  text-align: center;
+  opacity: 0.5;
+}
+
+.dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border: 2px solid #ffffff;
+  border-radius: 100%;
+  margin-left: 4px;
+}
+
+.dot.core-selected {
+  background-color: #ffffff;
+}

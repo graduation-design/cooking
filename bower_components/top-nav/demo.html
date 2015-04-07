@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>top-nav Demo</title>
+  <script src="../webcomponentsjs/webcomponents.js"></script>
+  <link rel="import" href="top-nav.html">
+  <link rel="import" href="nav-item.html">
+  <style>
+    html, body {
+      padding: 0;
+      margin: 0;
+    }
+
+    nav-item {
+      transition: all 0.1s ease;
+    }
+
+    nav-item:hover {
+      transform: translateX(6px);
+    }
+  </style>
+</head>
+<body unresolved>
+<top-nav>
+  <nav-item url="#">首页</nav-item>
+  <nav-item url="#">菜谱</nav-item>
+  <nav-item url="#">朋友圈</nav-item>
+</top-nav>
+<div class="content" style="height: 1000px; background-color: #cccccc"></div>
+</body>
+</html>

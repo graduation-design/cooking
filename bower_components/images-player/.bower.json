@@ -1,0 +1,26 @@
+{
+  "name": "images-player",
+  "keywords": [
+    "seed",
+    "polymer",
+    "web-components"
+  ],
+  "main": "images-player.html",
+  "dependencies": {
+    "polymer": "Polymer/polymer#^0.5.4",
+    "core-pages": "Polymer/core-pages#~0.5.5"
+  },
+  "devDependencies": {
+    "web-component-tester": "Polymer/web-component-tester#^2.2.3"
+  },
+  "homepage": "https://github.com/Lukeisme/images-player",
+  "_release": "f4aece8fd4",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "f4aece8fd44a733d56996d1b37cd1cbabdeb7e3a"
+  },
+  "_source": "git://github.com/Lukeisme/images-player.git",
+  "_target": "*",
+  "_originalSource": "Lukeisme/images-player"
+}

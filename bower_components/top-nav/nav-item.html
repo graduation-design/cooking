@@ -1,0 +1,35 @@
+<link rel="import" href="../polymer/polymer.html"/>
+<link rel="import" href="../paper-ripple/paper-ripple.html">
+
+<polymer-element name="nav-item" attributes="url">
+  <template>
+    <style>
+      :host {
+        display: inline-block;
+        width: 80px;
+        position: relative;
+        cursor: pointer;
+      }
+
+      a {
+        display: block;
+        color: #ffffff;
+        text-decoration: none;
+        text-align: center;
+      }
+
+      paper-ripple {
+        color: #ffffff;
+      }
+    </style>
+    <a href="#">
+      <content></content>
+    </a>
+    <paper-ripple fit></paper-ripple>
+  </template>
+  <script>
+    Polymer({
+      url: "#"
+    });
+  </script>
+</polymer-element>
