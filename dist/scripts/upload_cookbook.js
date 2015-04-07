@@ -1,0 +1,1 @@
+!function(o){"use strict";var e=o.querySelector("#upload_cookbook");e.addEventListener("template-bound",function(){console.log("Our app is ready to rock!")})}(wrap(document));

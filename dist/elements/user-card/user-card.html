@@ -1,0 +1,80 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/paper-shadow/paper-shadow.html">
+
+<polymer-element name="user-card" attributes="avatar isFollow userName">
+  <template>
+    <link rel="stylesheet" href="user-card.css">
+    <div id="id-info">
+      <img class="avatar-pic" src="{{avatar}}"/>
+      <a id="user-name" href="#">{{userName}}</a>
+      <paper-shadow id="follow_btn_shadow"
+                    z="0"
+                    animated="true"
+                    on-mouseenter="{{raiseZ}}"
+                    on-mouseleave="{{downZ}}"
+        >
+        <template if="{{!isFollow}}">
+          <a href="javascript:void(0)" class="follow-status follow">关注</a>
+        </template>
+        <template if="{{isFollow}}">
+          <a href="javascript:void(0)" class="follow-status followed">取消关注</a>
+        </template>
+      </paper-shadow>
+    </div>
+    <div class="signature">
+      "
+      <content></content>
+      "
+    </div>
+    <div class="self-func">
+      <ul class="func-list">
+        <li>
+          <paper-shadow
+            z="0"
+            on-mouseenter="{{raiseZ}}"
+            on-mouseleave="{{downZ}}"
+            animated="true"><i class="icon cookbook"></i><span
+            class="name">菜谱</span><span class="num">(12)</span></paper-shadow>
+        </li>
+        <li>
+          <paper-shadow
+            z="0"
+            on-mouseenter="{{raiseZ}}"
+            on-mouseleave="{{downZ}}"
+            animated="true"><i class="icon fans"></i><span
+            class="name">粉丝</span><span class="num">(1235)</span></paper-shadow>
+        </li>
+        <li>
+          <paper-shadow
+            z="0"
+            on-mouseenter="{{raiseZ}}"
+            on-mouseleave="{{downZ}}"
+            animated="true"><i class="icon knowledge"></i><span
+            class="name">知识</span><span class="num">(12)</span></paper-shadow>
+        </li>
+        <li>
+          <paper-shadow
+            z="0"
+            on-mouseenter="{{raiseZ}}"
+            on-mouseleave="{{downZ}}"
+            animated="true"><i class="icon share"></i><span
+            class="name">分享</span><span class="num">(123)</span></paper-shadow>
+        </li>
+      </ul>
+    </div>
+  </template>
+  <script>
+    (function () {
+      Polymer({
+        isFollow: false,
+        raiseZ: function (ev, detail, sender) {
+          sender.setZ(1);
+        },
+        downZ: function (ev, detail, sender) {
+          sender.setZ(0)
+        }
+
+      });
+    })();
+  </script>
+</polymer-element>
