@@ -12,8 +12,7 @@
 }
 
 .other_info {
-  display: inline-block;
-  vertical-align: top;
+  float: right;
   width: 340px;
   text-align: center;
 }
@@ -44,8 +43,11 @@
   font-size: 20px;
   padding-bottom: 10px;
 }
-
+.ingredients_list {
+  font-size: 0;
+}
 .ingredients_list li {
+  font-size: 14px;
   width: 282px;
   padding: 4px 8px;
   display: inline-block;
@@ -97,12 +99,4 @@
 
 .tips_content {
   padding: 10px 14px;
-}
-
-.tips_content li {
-  margin-bottom: 14px;
-}
-
-.tips_content li:last-child{
-  margin-bottom: 0;
 }
