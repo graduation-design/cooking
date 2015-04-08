@@ -44,17 +44,6 @@ gulp.task('elements', function () {
   return styleTask('elements', ['**/*.css']);
 });
 
-// Optimize Images
-gulp.task('images', function () {
-  return gulp.src('app/images/**/*')
-    .pipe($.cache($.imagemin({
-      progressive: true,
-      interlaced: true
-    })))
-    .pipe(gulp.dest('dist/images'))
-    .pipe($.size({title: 'images'}));
-});
-
 // Copy All Files At The Root Level (app)
 gulp.task('copy', function () {
   var app = gulp.src([
@@ -77,13 +66,6 @@ gulp.task('copy', function () {
     .pipe(gulp.dest('dist/elements'));
 
   return merge(app, bower, elements, vulcanized).pipe($.size({title: 'copy'}));
-});
-
-// Copy Web Fonts To Dist
-gulp.task('fonts', function () {
-  return gulp.src(['app/fonts/**'])
-    .pipe(gulp.dest('dist/fonts'))
-    .pipe($.size({title: 'fonts'}));
 });
 
 // Scan Your HTML For Assets & Optimize Them
@@ -148,7 +130,6 @@ gulp.task('serve', ['styles', 'elements'], function () {
   gulp.watch(['app/**/*.html'], reload);
   gulp.watch(['app/styles/**/*.css'], ['styles', reload]);
   gulp.watch(['app/elements/**/*.css'], ['elements', reload]);
-  gulp.watch(['app/images/**/*'], reload);
 });
 
 // Build and serve the output from the dist build
@@ -168,7 +149,7 @@ gulp.task('default', ['clean'], function (cb) {
   runSequence(
     ['copy', 'styles'],
     'elements',
-    ['images', 'fonts', 'html'],
+    ['html'],
     'vulcanize',
     cb);
 });
