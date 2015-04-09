@@ -49,56 +49,36 @@
 
         <h2>食材</h2>
         <ul class="ingredients">
-          <li><input name="food_name[]" class="food_name" type="text"/><input name="food_quantity[]"
-                                                                              class="food_quantity" type="text"/><a
-            class="delete-ingredients" href="javascript:void (0)" tabindex="-1">X</a>
-          </li>
-          <li><input name="food_name[]" class="food_name" type="text"/><input name="food_quantity[]"
-                                                                              class="food_quantity" type="text"/><a
-            class="delete-ingredients" href="javascript:void (0)" tabindex="-1">X</a>
-          </li>
-          <li><input name="food_name[]" class="food_name" type="text"/><input name="food_quantity[]"
-                                                                              class="food_quantity" type="text"/><a
-            class="delete-ingredients" href="javascript:void (0)" tabindex="-1">X</a>
-          </li>
+          <template repeat="{{ingredients}}">
+            <li>
+              <input name="food_name[]" class="food_name" type="text" value="{{food_name}}"/><input
+              name="food_quantity[]" class="food_quantity" type="text" value="{{food_quantity}}"/><a
+              class="delete-ingredients" href="javascript:void (0)" tabindex="-1">X</a>
+            </li>
+          </template>
         </ul>
         <h2>步骤</h2>
-        <ul class="steps">
-          <li>
-            <div class="step-pic-upload">
-              <div class="plus-icon">
-                <span class="iconicfill-plus-alt"></span>
+        <ol class="steps">
+          <template repeat="{{steps}}">
+            <li class="step-item">
+              <div class="step-pic-upload">
+                <div class="plus-icon">
+                  <span class="iconicfill-plus-alt"></span>
+                </div>
+                <div class="upload-note">添加步骤图</div>
               </div>
-              <div class="upload-note">添加步骤图</div>
-            </div>
-            <div class="step-content">
-              <textarea name="step_content[]"></textarea>
-            </div>
-          </li>
-          <li>
-            <div class="step-pic-upload">
-              <div class="plus-icon">
-                <span class="iconicfill-plus-alt"></span>
+              <div class="step-content">
+                <textarea name="step_content[]">{{step_content}}</textarea>
               </div>
-              <div class="upload-note">添加步骤图</div>
-            </div>
-            <div class="step-content">
-              <textarea name="step_content[]"></textarea>
-            </div>
-          </li>
-          <li>
-            <div class="step-pic-upload">
-              <div class="plus-icon">
-                <span class="iconicfill-plus-alt"></span>
-              </div>
-              <div class="upload-note">添加步骤图</div>
-            </div>
-            <div class="step-content">
-              <textarea name="step_content[]"></textarea>
-            </div>
-          </li>
-        </ul>
-        <div class="add-step"><a href="javascript:void (0);"></a><span class="iconicfill-plus"></span>增加一步</div>
+              <ul class="step-ctrl">
+                  <li class="ctrl-item add-step"><span class="entypo-plus"></span></li>
+                  <li class="ctrl-item remove-step"><span class="entypo-minus"></span></li>
+                  <li class="ctrl-item up-step"><span class="entypo-up-dir"></span></li>
+                  <li class="ctrl-item down-step"><span class="entypo-down-dir"></span></li>
+              </ul>
+            </li>
+          </template>
+        </ol>
         <h2>小贴士</h2>
         <textarea name="tips" id="tips" rows="4"></textarea>
       </form>
