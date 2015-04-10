@@ -36,7 +36,7 @@
     <h1>创建菜谱</h1>
 
     <div class="editor-container">
-      <form is="ajax-form" action="#" method="post">
+      <form is="ajax-form" action="#" method="post" enctype="multipart/form-data">
         <paper-input name="cookbook-title" id="cookbook-title" label="菜谱名称" floatinglabel></paper-input>
         <div id="main-pic-upload">
           <div class="plus-icon">
@@ -65,30 +65,11 @@
           </template>
         </ul>
         <h2>步骤</h2>
-        <ol class="steps">
-          <template repeat="{{steps}}">
-            <li class="step-item">
-              <div class="step-pic-upload">
-                <div class="plus-icon">
-                  <span class="entypo-plus-circled"></span>
-                </div>
-                <div class="upload-note">添加步骤图</div>
-                <file-input accept="image/*"></file-input>
-              </div>
-              <div class="step-content">
-                <textarea name="step_content[]">{{step_content}}</textarea>
-              </div>
-              <ul class="step-ctrl">
-                <li class="ctrl-item add-step"><span class="entypo-plus"></span></li>
-                <li class="ctrl-item remove-step"><span class="entypo-minus"></span></li>
-                <li class="ctrl-item up-step"><span class="entypo-up-dir"></span></li>
-                <li class="ctrl-item down-step"><span class="entypo-down-dir"></span></li>
-              </ul>
-            </li>
-          </template>
-        </ol>
+        <step-editor></step-editor>
         <h2>小贴士</h2>
         <textarea name="tips" id="tips" rows="4"></textarea>
+
+        <button id="submit-btn" type="submit">发布</button>
       </form>
     </div>
   </div>

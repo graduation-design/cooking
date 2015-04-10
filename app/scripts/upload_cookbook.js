@@ -7,8 +7,5 @@
   uploadCookbook.steps = [{step_content: ''}, {step_content: ''}, {step_content: ''}];
 
   uploadCookbook.addEventListener('template-bound', function () {
-    document.addEventListener('click', function(){
-      console.log(document.querySelector('file-input').files);
-    });
   });
 })(wrap(document));

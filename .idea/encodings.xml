@@ -4,6 +4,8 @@
     <file url="file://$PROJECT_DIR$/.gitignore" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/elements/elements.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/elements/id-card/id-card.css" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/elements/step-editor/step-editor.css" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/elements/step-editor/step-editor.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/elements/timeline-item/timeline_item.css" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/elements/timeline-item/timeline_item.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/elements/user-card/user-card.css" charset="UTF-8" />

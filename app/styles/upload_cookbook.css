@@ -135,125 +135,21 @@ paper-input {
   outline: none;
 }
 
-.steps {
-  counter-reset: step-counter;
-}
-
-.steps .step-item {
-  font-size: 0;
-  height: 90px;
-  margin-top: 10px;
-}
-
-.steps .step-pic-upload {
-  position: relative;
-  font-size: 14px;
-  display: inline-block;
-  vertical-align: top;
-  width: 100px;
-  height: 90px;
-  background-color: #ffebd7;
-  cursor: pointer;
-  margin-right: 14px;
-  color: #d9c4b0;
-}
-
-.steps .step-pic-upload file-input {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  cursor: pointer;
-}
-
-.step-pic-upload .plus-icon {
-  font-size: 32px;
-  text-align: center;
-  padding-top: 20px;
-}
-
-.step-pic-upload .upload-note {
-  text-align: center;
-  font-size: 12px;
-}
-
-.steps .step-num {
-  height: 90px;
-  width: 30px;
-  line-height: 90px;
-  text-align: center;
-  font-size: 20px;
-  background-color: #6fbfb1;
-  cursor: default;
-  border-top-left-radius: 4px;
-  border-bottom-left-radius: 4px;
-}
-
-.steps .step-content {
-  display: inline-block;
-  font-size: 0;
-}
-
-.steps .step-content:before {
-  content: counter(step-counter);
-  counter-increment: step-counter;
-  display: inline-block;
-  vertical-align: top;
-  height: 90px;
-  width: 30px;
-  line-height: 90px;
-  text-align: center;
-  font-size: 20px;
-  background-color: #6fbfb1;
-  cursor: default;
-  border-top-left-radius: 4px;
-  border-bottom-left-radius: 4px;
-}
-
-.steps textarea {
-  height: 80px;
-  width: 450px;
-  padding: 4px 10px;
-  font-size: 14px;
-  border-left: none;
-  border-top-right-radius: 4px;
-  border-bottom-right-radius: 4px;
-}
-
-.step-item:hover .step-ctrl {
-  display: block;
-}
-
-.steps .step-ctrl {
-  font-size: 18px;
-  float: right;
-  cursor: pointer;
-  display: none;
-}
-.step-ctrl .ctrl-item {
-  color: #fff;
-  background-color: #000;
-  opacity: 0.5;
-}
-.step-ctrl .ctrl-item:hover {
-  opacity: 0.8;
-}
-
-.steps .step-ctrl li {
-  width: 22px;
-  height: 22px;
-  line-height: 22px;
-  text-align: center;
-}
-
-.step-ctrl li span{
-  display: block;
-  width: 100%;
-  height: 100%;
-}
-
 #tips {
   width: 618px;
   padding: 8px 10px;
+}
+
+#submit-btn {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 0 10px 40px;
+  border: none;
+  background: #e74c3c;
+  color: #fff;
+  width: 200px;
+  font-weight: bold;
+  font-size: 16px;
+  letter-spacing: 30px;
+  cursor: pointer;
 }
