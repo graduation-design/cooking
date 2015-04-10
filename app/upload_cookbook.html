@@ -36,12 +36,11 @@
     <h1>创建菜谱</h1>
 
     <div class="editor-container">
-      <form action="#" method="post">
-        <input type="text" name="cookbook-title" id="cookbook-title" placeholder="菜谱名称"/>
-        <hr/>
+      <form is="ajax-form" action="#" method="post">
+        <paper-input name="cookbook-title" id="cookbook-title" label="菜谱名称" floatinglabel></paper-input>
         <div id="main-pic-upload">
           <div class="plus-icon">
-            <span class="iconicfill-plus-alt"></span>
+            <span class="entypo-plus-circled"></span>
           </div>
           <div class="upload-note">上传美食的成品图（建议尺寸：600x400）</div>
         </div>
@@ -51,9 +50,17 @@
         <ul class="ingredients">
           <template repeat="{{ingredients}}">
             <li>
-              <input name="food_name[]" class="food_name" type="text" value="{{food_name}}"/><input
-              name="food_quantity[]" class="food_quantity" type="text" value="{{food_quantity}}"/><a
-              class="delete-ingredients" href="javascript:void (0)" tabindex="-1">X</a>
+              <paper-input
+                name="food_name[]"
+                class="food_name"
+                value="{{food_name}}"
+                label="食材.如：鸡蛋"></paper-input>
+              <paper-input
+                name="food_quantity[]"
+                class="food_quantity"
+                value="{{food_quantity}}"
+                label="分量.如：100g"></paper-input>
+              <a class="delete-ingredients" href="javascript:void (0)" tabindex="-1">X</a>
             </li>
           </template>
         </ul>
@@ -63,18 +70,19 @@
             <li class="step-item">
               <div class="step-pic-upload">
                 <div class="plus-icon">
-                  <span class="iconicfill-plus-alt"></span>
+                  <span class="entypo-plus-circled"></span>
                 </div>
                 <div class="upload-note">添加步骤图</div>
+                <file-input accept="image/*"></file-input>
               </div>
               <div class="step-content">
                 <textarea name="step_content[]">{{step_content}}</textarea>
               </div>
               <ul class="step-ctrl">
-                  <li class="ctrl-item add-step"><span class="entypo-plus"></span></li>
-                  <li class="ctrl-item remove-step"><span class="entypo-minus"></span></li>
-                  <li class="ctrl-item up-step"><span class="entypo-up-dir"></span></li>
-                  <li class="ctrl-item down-step"><span class="entypo-down-dir"></span></li>
+                <li class="ctrl-item add-step"><span class="entypo-plus"></span></li>
+                <li class="ctrl-item remove-step"><span class="entypo-minus"></span></li>
+                <li class="ctrl-item up-step"><span class="entypo-up-dir"></span></li>
+                <li class="ctrl-item down-step"><span class="entypo-down-dir"></span></li>
               </ul>
             </li>
           </template>
