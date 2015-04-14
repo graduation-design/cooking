@@ -1,1 +1,1 @@
-!function(t){"use strict";var e=t.querySelector("#upload_cookbook");e.ingredients=[{food_name:"",food_quantity:""},{food_name:"",food_quantity:""}],e.steps=[{step_content:""},{step_content:""},{step_content:""}],e.addEventListener("template-bound",function(){})}(wrap(document));
+!function(e){"use strict";var o=e.querySelector("#upload_cookbook");o.addEventListener("template-bound",function(){})}(wrap(document));

@@ -130,7 +130,7 @@ paper-input {
   margin-top: 20px;
 }
 
-.ingredients li {
+#ingredients li {
   width: 600px;
   margin: 10px auto 0;
   position: relative;
@@ -303,20 +303,14 @@ paper-input {
   padding: 8px 10px;
 }
 
-#submit-btn {
-  margin: 20px auto;
-  width: 200px;
+.submit-btn {
+  text-align: center;
+  margin-top: 20px;
 }
 
-#submit-btn button {
-  display: block;
-  border: none;
-  font-weight: bold;
-  font-size: 16px;
-  letter-spacing: 30px;
-  cursor: pointer;
+#form-submit {
   color: #fff;
   background: #e74c3c;
-  padding: 10px 0 10px 40px;
-  width: 100%;
+  width: 180px;
+  font-weight: bold;
 }

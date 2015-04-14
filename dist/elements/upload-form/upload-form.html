@@ -7,7 +7,7 @@
 
       <div id="main-pic-upload">
         <div class="plus-icon">
-          <span class="entypo-plus-circled"></span>
+          <span class="plus-circled">+</span>
         </div>
         <div class="upload-note">上传美食的成品图（建议尺寸：600x400）</div>
         <file-input name="main-pic" accept="image/*"></file-input>
@@ -32,17 +32,98 @@
           </li>
         </template>
       </ul>
+      <div class="add-ingredient"><paper-button raised>+添加一项食材</paper-button></div>
       <h2>步骤</h2>
-      <step-editor></step-editor>
+      <ol id="steps">
+        <template repeat="{{steps}}">
+          <li class="step-item">
+            <div class="step-pic-upload">
+              <div class="plus-icon">
+                <span class="plus-circled">+</span>
+              </div>
+              <div class="upload-note">添加步骤图</div>
+              <file-input accept="image/*"></file-input>
+            </div>
+            <div class="step-content">
+              <textarea name="step_content[]">{{step_content}}</textarea>
+            </div>
+            <ul class="step-ctrl">
+              <li class="ctrl-item add-step" on-tap="{{addStep}}"><span class="plus">+</span></li>
+              <li class="ctrl-item remove-step" on-tap="{{removeStep}}"><span class="minus">-</span></li>
+              <li class="ctrl-item up-step" on-tap="{{upStep}}"><span class="up-dir">&utrif;</span></li>
+              <li class="ctrl-item down-step" on-tap="{{downStep}}"><span class="down-dir">&dtrif;</span></li>
+            </ul>
+          </li>
+        </template>
+      </ol>
       <h2>小贴士</h2>
       <textarea name="tips" id="tips" rows="4"></textarea>
 
-      <button id="submit-btn" type="submit">发布</button>
+      <paper-shadow id="submit-btn">
+        <button type="submit">发布</button>
+      </paper-shadow>
     </form>
   </template>
   <script>
     (function () {
-      Polymer({});
+      Polymer({
+        steps: [{step_content: ''}, {step_content: ''}, {step_content: ''}],
+        ingredients: [{food_name: '', food_quantity: ''}, {food_name: '', food_quantity: ''}],
+        ready: function () {
+          this.stepItems = this.$.steps.children;
+        },
+        _findStepItemIndex: function (path) {
+          var stepItem = null;
+          for (var i = 0; i < path.length; i++) {
+            if (path[i].className === 'step-item') {
+              stepItem = path[i];
+              break;
+            }
+          }
+
+          if (stepItem === null) return -1;
+
+          return Array.prototype.indexOf.call(this.stepItems, stepItem);
+        },
+        addStep: function (ev) {
+          var index = this._findStepItemIndex(ev.path);
+
+          if (index === -1) return;
+
+          this.steps = this.steps.slice(0, index).concat([{step_content: ''}]).concat(this.steps.slice(index, this.stepItems.length));
+        },
+        removeStep: function (ev) {
+          if (this.steps.length === 1) {
+            this.steps = [{step_content: ''}];
+            return;
+          }
+          var index = this._findStepItemIndex(ev.path);
+
+          if (index === -1) return;
+
+          this.steps = this.steps.slice(0, index - 1).concat(this.steps.slice(index, this.steps.length));
+        },
+        upStep: function (ev) {
+          var index = this._findStepItemIndex(ev.path);
+          var tmp;
+
+          if (index === 1) return;
+
+          tmp = this.steps[index - 2];
+          this.steps[index - 2] = this.steps[index - 1];
+          this.steps[index - 1] = tmp;
+        },
+        downStep: function (ev) {
+          var index = this._findStepItemIndex(ev.path);
+          var tmp;
+
+          if (index === this.steps.length) return;
+
+          tmp = this.steps[index];
+          this.steps[index] = this.steps[index - 1];
+          this.steps[index - 1] = tmp;
+        }
+      });
     })();
   </script>
 </polymer-element>

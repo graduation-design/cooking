@@ -1,9 +1,10 @@
 :host {
   display: block;
+  background-color: #fff;
 }
 
 #wrapper {
-  height: 200px;
+  min-height: 200px;
   font-size: 0;
 }
 
@@ -28,10 +29,20 @@
 }
 
 .user-name {
+  padding-left: 10px;
   padding-top: 4px;
 }
 
 .user-name span {
   color: #666;
   font-weight: bold;
+}
+
+.post-content {
+  padding: 10px 10px 0;
+}
+
+.main-pic {
+  text-align: center;
+  padding: 10px 0;
 }

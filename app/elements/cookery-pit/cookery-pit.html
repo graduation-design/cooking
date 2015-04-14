@@ -1,11 +1,11 @@
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 
-<polymer-element name="cookery-pit" attributes="cookImg title author">
+<polymer-element name="cookery-pit" attributes=" cookImg foodName author">
   <template>
     <link rel="stylesheet" href="cookery-pit.css">
     <img class="cookbook-pic" src="{{cookImg}}"/>
     <div class="cookbook-info">
-      <div class="title">{{title}}</div>
+      <div class="title">{{foodName}}</div>
       <div class="author"><span>by:{{author}}</span></div>
     </div>
   </template>
