@@ -116,12 +116,28 @@ paper-input {
   margin-top: 30px;
 }
 
-#main-pic-upload file-input{
+#main-pic-upload file-input {
   position: absolute;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
+}
+
+#main-pic-upload .spinner {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.6);
+  text-align: center;
+}
+
+#main-pic-upload .spinner paper-spinner {
+  margin-top: 120px;
+  width: 80px;
+  height: 80px;
 }
 
 #introduction {
@@ -202,6 +218,22 @@ paper-input {
 .step-pic-upload .upload-note {
   text-align: center;
   font-size: 12px;
+}
+
+.step-pic-upload .spinner {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.6);
+  text-align: center;
+}
+
+.step-pic-upload .spinner paper-spinner {
+  margin-top: 18px;
+  width: 30px;
+  height: 30px;
 }
 
 #steps .step-num {
@@ -296,7 +328,6 @@ paper-input {
 .step-pic-upload .plus-icon {
   padding: 18px 0 12px;
 }
-
 
 #tips {
   width: 618px;

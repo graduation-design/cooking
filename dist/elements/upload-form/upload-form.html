@@ -2,7 +2,7 @@
   <template>
     <link rel="stylesheet" href="upload-form.css"/>
 
-    <form is="ajax-form" action="#" method="post" enctype="multipart/form-data">
+    <form is="ajax-form" action="#" method="post" enctype="multipart/form-data" id="form">
       <paper-input name="cookbook-title" id="cookbook-title" label="菜谱名称" floatinglabel></paper-input>
 
       <div id="main-pic-upload">
@@ -10,14 +10,22 @@
           <span class="plus-circled">+</span>
         </div>
         <div class="upload-note">上传美食的成品图（建议尺寸：600x400）</div>
-        <file-input name="main-pic" accept="image/*"></file-input>
+        <file-input
+          id="mainPic"
+          name="main-pic"
+          accept="image/*" on-change="{{fileChangeHandler}}"></file-input>
+        <template if="{{mainPicUploading}}">
+          <div class="spinner">
+            <paper-spinner active></paper-spinner>
+          </div>
+        </template>
       </div>
       <textarea name="introduction" id="introduction" cols="30" rows="10" placeholder="介绍介绍你的美食吧，相关故事也可以哦"></textarea>
 
       <h2>食材</h2>
-      <ul class="ingredients">
+      <ul id="ingredients">
         <template repeat="{{ingredients}}">
-          <li>
+          <li class="ingredient-item">
             <paper-input
               name="food_name[]"
               class="food_name"
@@ -28,11 +36,13 @@
               class="food_quantity"
               value="{{food_quantity}}"
               label="分量.如：100g"></paper-input>
-            <a class="delete-ingredients" href="javascript:void (0)" tabindex="-1">X</a>
+            <a class="delete-ingredients" on-tap="{{deleteIngredient}}" href="javascript:void (0)" tabindex="-1">X</a>
           </li>
         </template>
       </ul>
-      <div class="add-ingredient"><paper-button raised>+添加一项食材</paper-button></div>
+      <div class="add-ingredient">
+        <paper-button raised on-tap="{{addIngredient}}">+添加一项食材</paper-button>
+      </div>
       <h2>步骤</h2>
       <ol id="steps">
         <template repeat="{{steps}}">
@@ -43,6 +53,11 @@
               </div>
               <div class="upload-note">添加步骤图</div>
               <file-input accept="image/*"></file-input>
+              <template if="{{uploading}}">
+                <div class="spinner">
+                  <paper-spinner active></paper-spinner>
+                </div>
+              </template>
             </div>
             <div class="step-content">
               <textarea name="step_content[]">{{step_content}}</textarea>
@@ -59,18 +74,27 @@
       <h2>小贴士</h2>
       <textarea name="tips" id="tips" rows="4"></textarea>
 
-      <paper-shadow id="submit-btn">
-        <button type="submit">发布</button>
-      </paper-shadow>
+      <div class="submit-btn">
+        <paper-button id="form-submit" on-tap="{{submitForm}}" raised>发布</paper-button>
+      </div>
+
     </form>
   </template>
   <script>
     (function () {
       Polymer({
-        steps: [{step_content: ''}, {step_content: ''}, {step_content: ''}],
+        steps: [{step_content: '', uploading: false},{step_content: '', uploading: false},{step_content: '', uploading: false}],
         ingredients: [{food_name: '', food_quantity: ''}, {food_name: '', food_quantity: ''}],
+        mainPicUploading: false,
+        fileChangeHandler: function (ev) {
+          console.log(this.$.mainPic.files);
+        },
         ready: function () {
+          this.ingredientsItem = this.$.ingredients.children;
           this.stepItems = this.$.steps.children;
+        },
+        submitForm: function () {
+          this.$.form.submit();
         },
         _findStepItemIndex: function (path) {
           var stepItem = null;
@@ -90,7 +114,7 @@
 
           if (index === -1) return;
 
-          this.steps = this.steps.slice(0, index).concat([{step_content: ''}]).concat(this.steps.slice(index, this.stepItems.length));
+          this.steps = this.steps.slice(0, index).concat([{step_content: ''}]).concat(this.steps.slice(index, this.steps.length));
         },
         removeStep: function (ev) {
           if (this.steps.length === 1) {
@@ -122,6 +146,33 @@
           tmp = this.steps[index];
           this.steps[index] = this.steps[index - 1];
           this.steps[index - 1] = tmp;
+        },
+        _findIngredientItemIndex: function (path) {
+          var igdItem = null;
+          for (var i = 0; i < path.length; i++) {
+            if (path[i].className === 'ingredient-item') {
+              igdItem = path[i];
+              break;
+            }
+          }
+
+          if (igdItem === null) return -1;
+
+          return Array.prototype.indexOf.call(this.ingredientsItem, igdItem);
+        },
+        addIngredient: function (ev) {
+          this.ingredients.push({food_name: '', food_quantity: ''});
+        },
+        deleteIngredient: function (ev) {
+          if (this.ingredients.length === 1) {
+            this.ingredients = [{food_name: '', food_quantity: ''}];
+            return;
+          }
+          var index = this._findIngredientItemIndex(ev.path);
+
+          if (index === -1) return;
+
+          this.ingredients = this.ingredients.slice(0, index - 1).concat(this.ingredients.slice(index, this.ingredients.length));
         }
       });
     })();

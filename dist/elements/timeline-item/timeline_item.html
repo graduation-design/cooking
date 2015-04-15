@@ -1,7 +1,4 @@
-<link rel="import" href="../../bower_components/polymer/polymer.html">
-<link rel="import" href="../../bower_components/paper-shadow/paper-shadow.html">
-
-<polymer-element name="timeline-item" attributes="avatarPic userName type">
+<polymer-element name="timeline-item" attributes="avatarPic showPic userName type">
   <template>
     <link rel="stylesheet" href="timeline_item.css">
     <paper-shadow z="1">
@@ -11,8 +8,13 @@
         </div>
         <div class="info-side">
           <section class="user-name"><span>{{userName}}</span>{{typeTable[type]}}:</section>
-          <section class="">
+          <section class="post-content">
             <content></content>
+          </section>
+          <section class="main-pic">
+            <a href="#">
+              <img src="{{showPic}}"/>
+            </a>
           </section>
         </div>
       </div>
