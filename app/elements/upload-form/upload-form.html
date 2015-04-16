@@ -3,7 +3,7 @@
     <link rel="stylesheet" href="upload-form.css"/>
 
     <form action="#" method="post" id="form">
-      <paper-input name="cookbook-title" id="cookbook-title" label="菜谱名称" floatinglabel></paper-input>
+      <paper-input id="cookbook-title" label="菜谱名称" floatinglabel></paper-input>
 
       <div id="main-pic-upload">
         <div class="plus-icon">
@@ -46,6 +46,7 @@
       <div class="add-ingredient">
         <paper-button raised on-tap="{{addIngredient}}">+添加一项食材</paper-button>
       </div>
+
       <h2>步骤</h2>
       <ol id="steps">
         <template repeat="{{steps}}">
@@ -55,7 +56,7 @@
                 <span class="plus-circled">+</span>
               </div>
               <div class="upload-note">添加步骤图</div>
-              <file-input name="step_pic[]" accept="image/*"></file-input>
+              <file-input name="step_pic[]" accept="image/*" on-change="{{stepPicUpload}}"></file-input>
               <template if="{{uploading}}">
                 <div class="spinner">
                   <paper-spinner active></paper-spinner>
@@ -63,7 +64,7 @@
               </template>
             </div>
             <div class="step-content">
-              <textarea name="step_content">{{step_content}}</textarea>
+              <textarea name="step_content[]">{{step_content}}</textarea>
             </div>
             <ul class="step-ctrl">
               <li class="ctrl-item add-step" on-tap="{{addStep}}"><span class="plus">+</span></li>
@@ -81,11 +82,20 @@
         <paper-button id="form-submit" on-tap="{{submitForm}}" raised>发布</paper-button>
       </div>
 
+      <div id="hidden-input">
+        <input type="text" name="cookbook_title" value="{{cookbookTitle}}"/>
+        <template repeat="{{ingredients}}">
+          <input type="text" name="food_name[]" value="{{food_name}}"/>
+          <input type="text" name="food_quantity[]" value="{{food_quantity}}"/>
+        </template>
+      </div>
+
     </form>
   </template>
   <script>
     (function () {
       Polymer({
+        cookbookTitle: '',
         steps: [
           {step_content: '', uploading: false},
           {step_content: '', uploading: false},
@@ -97,35 +107,61 @@
         ],
         mainPicUploading: false,
 
-        fileUpload: function (fileName, file) {
+        fileUpload: function (fileName, file, cb) {
+          var self = this;
           var xhr = new XMLHttpRequest();
           var formData = new FormData();
           formData.append(fileName, file);
 
           xhr.open('post', '#', true);
-          xhr.onload = function (e) {
-            var ajax = e.target;
-            if (ajax.status > 299) console.log(fileName + ' upload fail:' + ajax.status + '  ' + ajax.statusText);
-            else {
-
-            }
-          };
+          xhr.onload = cb;
           xhr.upload.onprogress = function (e) {
           };
+
           xhr.send(formData);
         },
 
         uploadMainPic: function (ev) {
-          console.log(ev);
-          this.fileUpload('mainPic', ev.detail.valid[0])
+          var self = this;
+          this.mainPicUploading = true;
+
+          this.fileUpload('mainPic', ev.detail.valid[0], function (e) {
+            var ajax = e.target;
+            if (ajax.status > 299) console.log('upload fail:' + ajax.status + '  ' + ajax.statusText);
+            else {
+
+            }
+            setTimeout(function () {
+              this.mainPicUploading = false;
+            }.bind(self), 2000);
+          })
         },
+
+        stepPicUpload: function (ev) {
+          var self = this;
+          var index = this._findStepItemIndex(ev.path);
+          this.steps[index-1].uploading = true;
+          this.fileUpload('stepPic', ev.detail.valid[0], function (e) {
+            var ajax = e.target;
+            if (ajax.status > 299) console.log('upload fail:' + ajax.status + '  ' + ajax.statusText);
+            else {
+
+            }
+            setTimeout(function () {
+              this.steps[index-1].uploading = false;
+            }.bind(self), 2000);
+          });
+        },
+
         ready: function () {
           this.ingredientsItem = this.$.ingredients.children;
           this.stepItems = this.$.steps.children;
         },
+
         submitForm: function () {
           this.$.form.submit();
         },
+
         _findStepItemIndex: function (path) {
           var stepItem = null;
           for (var i = 0; i < path.length; i++) {
@@ -139,6 +175,7 @@
 
           return Array.prototype.indexOf.call(this.stepItems, stepItem);
         },
+
         addStep: function (ev) {
           var index = this._findStepItemIndex(ev.path);
 
@@ -146,6 +183,7 @@
 
           this.steps = this.steps.slice(0, index).concat([{step_content: ''}]).concat(this.steps.slice(index, this.steps.length));
         },
+
         removeStep: function (ev) {
           if (this.steps.length === 1) {
             this.steps = [{step_content: ''}];
@@ -157,6 +195,7 @@
 
           this.steps = this.steps.slice(0, index - 1).concat(this.steps.slice(index, this.steps.length));
         },
+
         upStep: function (ev) {
           var index = this._findStepItemIndex(ev.path);
           var tmp;
@@ -167,6 +206,7 @@
           this.steps[index - 2] = this.steps[index - 1];
           this.steps[index - 1] = tmp;
         },
+
         downStep: function (ev) {
           var index = this._findStepItemIndex(ev.path);
           var tmp;
@@ -177,6 +217,7 @@
           this.steps[index] = this.steps[index - 1];
           this.steps[index - 1] = tmp;
         },
+
         _findIngredientItemIndex: function (path) {
           var igdItem = null;
           for (var i = 0; i < path.length; i++) {
@@ -190,9 +231,11 @@
 
           return Array.prototype.indexOf.call(this.ingredientsItem, igdItem);
         },
+
         addIngredient: function (ev) {
           this.ingredients.push({food_name: '', food_quantity: ''});
         },
+
         deleteIngredient: function (ev) {
           if (this.ingredients.length === 1) {
             this.ingredients = [{food_name: '', food_quantity: ''}];

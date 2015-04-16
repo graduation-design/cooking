@@ -345,3 +345,7 @@ paper-input {
   width: 180px;
   font-weight: bold;
 }
+
+#hidden-input {
+  display: none;
+}
