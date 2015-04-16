@@ -2,7 +2,7 @@
   <template>
     <link rel="stylesheet" href="upload-form.css"/>
 
-    <form is="ajax-form" action="#" method="post" enctype="multipart/form-data" id="form">
+    <form action="#" method="post" id="form">
       <paper-input name="cookbook-title" id="cookbook-title" label="菜谱名称" floatinglabel></paper-input>
 
       <div id="main-pic-upload">
@@ -10,10 +10,13 @@
           <span class="plus-circled">+</span>
         </div>
         <div class="upload-note">上传美食的成品图（建议尺寸：600x400）</div>
+
         <file-input
           id="mainPic"
           name="main-pic"
-          accept="image/*" on-change="{{fileChangeHandler}}"></file-input>
+          accept="image/*"
+          on-change="{{uploadMainPic}}"></file-input>
+
         <template if="{{mainPicUploading}}">
           <div class="spinner">
             <paper-spinner active></paper-spinner>
@@ -52,7 +55,7 @@
                 <span class="plus-circled">+</span>
               </div>
               <div class="upload-note">添加步骤图</div>
-              <file-input accept="image/*"></file-input>
+              <file-input name="step_pic[]" accept="image/*"></file-input>
               <template if="{{uploading}}">
                 <div class="spinner">
                   <paper-spinner active></paper-spinner>
@@ -60,7 +63,7 @@
               </template>
             </div>
             <div class="step-content">
-              <textarea name="step_content[]">{{step_content}}</textarea>
+              <textarea name="step_content">{{step_content}}</textarea>
             </div>
             <ul class="step-ctrl">
               <li class="ctrl-item add-step" on-tap="{{addStep}}"><span class="plus">+</span></li>
@@ -83,11 +86,38 @@
   <script>
     (function () {
       Polymer({
-        steps: [{step_content: '', uploading: false},{step_content: '', uploading: false},{step_content: '', uploading: false}],
-        ingredients: [{food_name: '', food_quantity: ''}, {food_name: '', food_quantity: ''}],
+        steps: [
+          {step_content: '', uploading: false},
+          {step_content: '', uploading: false},
+          {step_content: '', uploading: false}
+        ],
+        ingredients: [
+          {food_name: '', food_quantity: ''},
+          {food_name: '', food_quantity: ''}
+        ],
         mainPicUploading: false,
-        fileChangeHandler: function (ev) {
-          console.log(this.$.mainPic.files);
+
+        fileUpload: function (fileName, file) {
+          var xhr = new XMLHttpRequest();
+          var formData = new FormData();
+          formData.append(fileName, file);
+
+          xhr.open('post', '#', true);
+          xhr.onload = function (e) {
+            var ajax = e.target;
+            if (ajax.status > 299) console.log(fileName + ' upload fail:' + ajax.status + '  ' + ajax.statusText);
+            else {
+
+            }
+          };
+          xhr.upload.onprogress = function (e) {
+          };
+          xhr.send(formData);
+        },
+
+        uploadMainPic: function (ev) {
+          console.log(ev);
+          this.fileUpload('mainPic', ev.detail.valid[0])
         },
         ready: function () {
           this.ingredientsItem = this.$.ingredients.children;

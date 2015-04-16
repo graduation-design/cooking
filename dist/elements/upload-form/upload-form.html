@@ -2,7 +2,7 @@
   <template>
     <link rel="stylesheet" href="upload-form.css"/>
 
-    <form is="ajax-form" action="#" method="post" enctype="multipart/form-data" id="form">
+    <form is="ajax-form" action="#" method="post" enctype="multipart/form-data" id="form" on-submitted="{{mainFormSubmitted}}">
       <paper-input name="cookbook-title" id="cookbook-title" label="菜谱名称" floatinglabel></paper-input>
 
       <div id="main-pic-upload">
@@ -86,6 +86,9 @@
         steps: [{step_content: '', uploading: false},{step_content: '', uploading: false},{step_content: '', uploading: false}],
         ingredients: [{food_name: '', food_quantity: ''}, {food_name: '', food_quantity: ''}],
         mainPicUploading: false,
+        mainFormSubmitted: function(ev){
+          console.log(ev);
+        },
         fileChangeHandler: function (ev) {
           console.log(this.$.mainPic.files);
         },
