@@ -6,7 +6,6 @@
     "top-nav": "Lukeisme/top-nav",
     "images-player": "Lukeisme/images-player",
     "paper-shadow": "Polymer/paper-shadow#~0.5.5",
-    "ajax-form": "~1.6.0",
     "paper-input": "Polymer/paper-input#~0.5.5",
     "file-input": "~1.1.4",
     "core-tooltip": "Polymer/core-tooltip#~0.5.5",
