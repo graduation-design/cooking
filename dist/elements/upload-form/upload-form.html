@@ -125,7 +125,8 @@
           this.mainPicUploading = true;
 
           this.upload(this.recipePicUrl, {
-            'main_pic': ev.detail.valid[0],
+            'index': 0,
+            'img': ev.detail.valid[0],
             'uuid': this.uuid
           }, function (e) {
             var ajax = e.target;
@@ -141,9 +142,9 @@
           var index = this._findStepItemIndex(ev.path);
           this.steps[index - 1].uploading = true;
           this.upload(this.recipePicUrl, {
-            'step_pic': ev.detail.valid[0],
+            'img': ev.detail.valid[0],
             'uuid': this.uuid,
-            'step_num': index
+            'index': index
           }, function (e) {
             var ajax = e.target;
             if (ajax.status > 299) console.log('upload fail:' + ajax.status + '  ' + ajax.statusText);

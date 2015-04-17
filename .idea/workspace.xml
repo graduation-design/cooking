@@ -34,14 +34,14 @@
       <file leaf-file-name="upload-form.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/elements/upload-form/upload-form.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.75289017">
-              <caret line="229" column="13" selection-start-line="229" selection-start-column="13" selection-end-line="229" selection-end-column="13" />
+            <state vertical-scroll-proportion="0.5765896">
+              <caret line="146" column="26" selection-start-line="146" selection-start-column="26" selection-end-line="146" selection-end-column="26" />
               <folding>
                 <element signature="n#div#1;n#form#0;n#template#0;n#polymer-element#0;n#!!top" expanded="false" />
-                <element signature="e#6098#6334#0" expanded="false" />
-                <element signature="e#6371#6702#0" expanded="false" />
-                <element signature="e#6735#6993#0" expanded="false" />
-                <element signature="e#7028#7294#0" expanded="false" />
+                <element signature="e#6109#6345#0" expanded="false" />
+                <element signature="e#6382#6713#0" expanded="false" />
+                <element signature="e#6746#7004#0" expanded="false" />
+                <element signature="e#7039#7305#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -162,34 +162,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="cooking" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cooking" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cooking" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bower_components" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cooking" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cooking" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -671,14 +643,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/elements/upload-form/upload-form.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.75289017">
-          <caret line="229" column="13" selection-start-line="229" selection-start-column="13" selection-end-line="229" selection-end-column="13" />
+        <state vertical-scroll-proportion="0.5765896">
+          <caret line="146" column="26" selection-start-line="146" selection-start-column="26" selection-end-line="146" selection-end-column="26" />
           <folding>
             <element signature="n#div#1;n#form#0;n#template#0;n#polymer-element#0;n#!!top" expanded="false" />
-            <element signature="e#6098#6334#0" expanded="false" />
-            <element signature="e#6371#6702#0" expanded="false" />
-            <element signature="e#6735#6993#0" expanded="false" />
-            <element signature="e#7028#7294#0" expanded="false" />
+            <element signature="e#6109#6345#0" expanded="false" />
+            <element signature="e#6382#6713#0" expanded="false" />
+            <element signature="e#6746#7004#0" expanded="false" />
+            <element signature="e#7039#7305#0" expanded="false" />
           </folding>
         </state>
       </provider>
