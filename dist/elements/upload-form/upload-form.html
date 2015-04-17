@@ -6,10 +6,15 @@
       <paper-input id="cookbook-title" label="菜谱名称" floatinglabel value="{{cookbookTitle}}"></paper-input>
 
       <div id="main-pic-upload">
-        <div class="plus-icon">
-          <span class="plus-circled">+</span>
-        </div>
-        <div class="upload-note">上传美食的成品图（建议尺寸：600x400）</div>
+        <template if="{{mainPicUrl===''}}">
+          <div class="plus-icon">
+            <span class="plus-circled">+</span>
+          </div>
+          <div class="upload-note">上传美食的成品图（建议尺寸：600x400）</div>
+        </template>
+        <template if="{{mainPicUrl !== ''}}">
+          <img class="image" src="{{mainPicUrl}}"/>
+        </template>
 
         <file-input
           id="mainPic"
@@ -49,10 +54,15 @@
         <template repeat="{{steps}}">
           <li class="step-item">
             <div class="step-pic-upload">
-              <div class="plus-icon">
-                <span class="plus-circled">+</span>
-              </div>
-              <div class="upload-note">添加步骤图</div>
+              <template if="{{step_pic === ''}}">
+                <div class="plus-icon">
+                  <span class="plus-circled">+</span>
+                </div>
+                <div class="upload-note">添加步骤图</div>
+              </template>
+              <template if="{{step_pic !== ''}}">
+                <img src="{{step_pic}}"/>
+              </template>
               <file-input name="step_pic" accept="image/*" on-change="{{stepPicUpload}}"></file-input>
               <template if="{{uploading}}">
                 <div class="spinner">
@@ -97,10 +107,11 @@
         cookbookTitle: '',
         recipeFormUrl: '',
         recipePicUrl: '',
+        mainPicUrl: '',
         steps: [
-          {step_content: '', uploading: false},
-          {step_content: '', uploading: false},
-          {step_content: '', uploading: false}
+          {step_content: '', uploading: false, step_pic:'http://cp1.douguo.net/upload/caiku/a/5/c/200_a5485cfc63563104404da9dbd4495a4c.jpg'},
+          {step_content: '', uploading: false, step_pic:''},
+          {step_content: '', uploading: false, step_pic:''}
         ],
         ingredients: [
           {food_name: '', food_quantity: ''},
@@ -130,10 +141,11 @@
             'img': ev.detail.valid[0],
             'uuid': this.uuid
           }, function (e) {
-            var ajax = e.target;
-            if (ajax.status > 299) console.log('upload fail:' + ajax.status + '  ' + ajax.statusText);
+            var data = {};
+            if (this.status > 299) console.log('upload fail:' + this.status + '  ' + this.statusText);
             else {
-              //set uuid
+              data = JSON.parse(this.response);
+              if(!this.uuid) this.uuid = data.uuid;
             }
             self.mainPicUploading = false;
           })
@@ -148,11 +160,12 @@
             'index': index
           }, function (e) {
             console.log(e,this);
-            var ajax = e.target;
-            if (ajax.status > 299) console.log('upload fail:' + ajax.status + '  ' + ajax.statusText);
+            if (this.status > 299) console.log('upload fail:' + this.status + '  ' + this.statusText);
             else {
-
+              data = JSON.parse(this.response);
+              if(!this.uuid) this.uuid = data.uuid;
             }
+            console.log(self);
             self.steps[index - 1].uploading = false;
           });
         },

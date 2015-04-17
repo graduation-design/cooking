@@ -91,6 +91,12 @@ paper-input {
   cursor: pointer;
   border-radius: 5px;
   color: #d9c4b0;
+  overflow: hidden;
+}
+
+#main-pic-upload .image {
+  width: 100%;
+  height: 100%;
 }
 
 #main-pic-upload .plus-icon {
@@ -205,6 +211,12 @@ paper-input {
   cursor: pointer;
   margin-right: 14px;
   color: #d9c4b0;
+  overflow: hidden;
+}
+
+#steps .step-pic-upload img {
+  width: 100%;
+  height: 100%;
 }
 
 #steps .step-pic-upload file-input {

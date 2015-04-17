@@ -34,14 +34,16 @@
       <file leaf-file-name="upload-form.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/elements/upload-form/upload-form.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6589595">
-              <caret line="149" column="32" selection-start-line="149" selection-start-column="32" selection-end-line="149" selection-end-column="32" />
+            <state vertical-scroll-proportion="0.732659">
+              <caret line="167" column="30" selection-start-line="167" selection-start-column="30" selection-end-line="167" selection-end-column="30" />
               <folding>
                 <element signature="n#div#1;n#form#0;n#template#0;n#polymer-element#0;n#!!top" expanded="false" />
-                <element signature="e#6169#6405#0" expanded="false" />
-                <element signature="e#6442#6773#0" expanded="false" />
-                <element signature="e#6806#7064#0" expanded="false" />
-                <element signature="e#7099#7365#0" expanded="false" />
+                <element signature="n#ul#0;n#li#0;n#template#0;n#ol#0;n#form#0;n#template#0;n#polymer-element#0;n#!!top" expanded="false" />
+                <element signature="n#div#3;n#form#0;n#template#0;n#polymer-element#0;n#!!top" expanded="false" />
+                <element signature="e#6871#7107#0" expanded="false" />
+                <element signature="e#7144#7475#0" expanded="false" />
+                <element signature="e#7508#7766#0" expanded="false" />
+                <element signature="e#7801#8067#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -51,7 +53,7 @@
         <entry file="file://$PROJECT_DIR$/app/elements/upload-form/upload-form.css">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="349" column="16" selection-start-line="349" selection-start-column="16" selection-end-line="349" selection-end-column="16" />
+              <caret line="216" column="27" selection-start-line="216" selection-start-column="27" selection-end-line="216" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -98,9 +100,9 @@
         <option value="$PROJECT_DIR$/app/moments.html" />
         <option value="$PROJECT_DIR$/app/styles/moments.css" />
         <option value="$PROJECT_DIR$/app/elements/timeline-item/timeline_item.css" />
-        <option value="$PROJECT_DIR$/app/elements/upload-form/upload-form.css" />
         <option value="$PROJECT_DIR$/app/elements/elements.html" />
         <option value="$PROJECT_DIR$/app/upload_cookbook.html" />
+        <option value="$PROJECT_DIR$/app/elements/upload-form/upload-form.css" />
         <option value="$PROJECT_DIR$/app/elements/upload-form/upload-form.html" />
       </list>
     </option>
@@ -617,14 +619,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/elements/upload-form/upload-form.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="349" column="16" selection-start-line="349" selection-start-column="16" selection-end-line="349" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/elements/elements.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-5.428571">
@@ -641,16 +635,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/elements/upload-form/upload-form.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="216" column="27" selection-start-line="216" selection-start-column="27" selection-end-line="216" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/elements/upload-form/upload-form.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6589595">
-          <caret line="149" column="32" selection-start-line="149" selection-start-column="32" selection-end-line="149" selection-end-column="32" />
+        <state vertical-scroll-proportion="0.732659">
+          <caret line="167" column="30" selection-start-line="167" selection-start-column="30" selection-end-line="167" selection-end-column="30" />
           <folding>
             <element signature="n#div#1;n#form#0;n#template#0;n#polymer-element#0;n#!!top" expanded="false" />
-            <element signature="e#6169#6405#0" expanded="false" />
-            <element signature="e#6442#6773#0" expanded="false" />
-            <element signature="e#6806#7064#0" expanded="false" />
-            <element signature="e#7099#7365#0" expanded="false" />
+            <element signature="n#ul#0;n#li#0;n#template#0;n#ol#0;n#form#0;n#template#0;n#polymer-element#0;n#!!top" expanded="false" />
+            <element signature="n#div#3;n#form#0;n#template#0;n#polymer-element#0;n#!!top" expanded="false" />
+            <element signature="e#6871#7107#0" expanded="false" />
+            <element signature="e#7144#7475#0" expanded="false" />
+            <element signature="e#7508#7766#0" expanded="false" />
+            <element signature="e#7801#8067#0" expanded="false" />
           </folding>
         </state>
       </provider>
