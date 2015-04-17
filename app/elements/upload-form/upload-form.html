@@ -1,8 +1,8 @@
-<polymer-element name="upload-form" attributes="">
+<polymer-element name="upload-form" attributes="recipeFormUrl recipePicUrl">
   <template>
     <link rel="stylesheet" href="upload-form.css"/>
 
-    <form action="recipeForm" method="post" id="form">
+    <form action="{{recipeFormUrl}}" method="post" id="form">
       <paper-input id="cookbook-title" label="菜谱名称" floatinglabel></paper-input>
 
       <div id="main-pic-upload">
@@ -95,6 +95,8 @@
       Polymer({
         uuid: 0,
         cookbookTitle: '',
+        recipeFormUrl: '',
+        recipePicUrl: '',
         steps: [
           {step_content: '', uploading: false},
           {step_content: '', uploading: false},
@@ -122,7 +124,7 @@
         uploadMainPic: function (ev) {
           this.mainPicUploading = true;
 
-          this.upload('recipePic', {
+          this.upload(this.recipePicUrl, {
             'main_pic': ev.detail.valid[0],
             'uuid': this.uuid
           }, function (e) {
@@ -138,7 +140,7 @@
         stepPicUpload: function (ev) {
           var index = this._findStepItemIndex(ev.path);
           this.steps[index - 1].uploading = true;
-          this.upload('recipePic', {
+          this.upload(this.recipePicUrl, {
             'step_pic': ev.detail.valid[0],
             'uuid': this.uuid,
             'step_num': index
@@ -155,6 +157,8 @@
         ready: function () {
           this.ingredientsItem = this.$.ingredients.children;
           this.stepItems = this.$.steps.children;
+
+          console.log(this.recipeFormUrl);
         },
 
         submitForm: function () {
