@@ -34,14 +34,14 @@
       <file leaf-file-name="upload-form.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/elements/upload-form/upload-form.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.63150287">
-              <caret line="160" column="42" selection-start-line="160" selection-start-column="42" selection-end-line="160" selection-end-column="42" />
+            <state vertical-scroll-proportion="0.75289017">
+              <caret line="229" column="13" selection-start-line="229" selection-start-column="13" selection-end-line="229" selection-end-column="13" />
               <folding>
                 <element signature="n#div#1;n#form#0;n#template#0;n#polymer-element#0;n#!!top" expanded="false" />
-                <element signature="e#6072#6308#0" expanded="false" />
-                <element signature="e#6345#6676#0" expanded="false" />
-                <element signature="e#6709#6967#0" expanded="false" />
-                <element signature="e#7002#7268#0" expanded="false" />
+                <element signature="e#6098#6334#0" expanded="false" />
+                <element signature="e#6371#6702#0" expanded="false" />
+                <element signature="e#6735#6993#0" expanded="false" />
+                <element signature="e#7028#7294#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -671,14 +671,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/elements/upload-form/upload-form.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.63150287">
-          <caret line="160" column="42" selection-start-line="160" selection-start-column="42" selection-end-line="160" selection-end-column="42" />
+        <state vertical-scroll-proportion="0.75289017">
+          <caret line="229" column="13" selection-start-line="229" selection-start-column="13" selection-end-line="229" selection-end-column="13" />
           <folding>
             <element signature="n#div#1;n#form#0;n#template#0;n#polymer-element#0;n#!!top" expanded="false" />
-            <element signature="e#6072#6308#0" expanded="false" />
-            <element signature="e#6345#6676#0" expanded="false" />
-            <element signature="e#6709#6967#0" expanded="false" />
-            <element signature="e#7002#7268#0" expanded="false" />
+            <element signature="e#6098#6334#0" expanded="false" />
+            <element signature="e#6371#6702#0" expanded="false" />
+            <element signature="e#6735#6993#0" expanded="false" />
+            <element signature="e#7028#7294#0" expanded="false" />
           </folding>
         </state>
       </provider>
