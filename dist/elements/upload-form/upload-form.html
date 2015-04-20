@@ -1,4 +1,4 @@
-<polymer-element name="upload-form" attributes="recipeFormUrl recipePicUrl">
+<polymer-element name="upload-form" attributes="recipeFormUrl recipePicUrl popTags">
   <template>
     <link rel="stylesheet" href="upload-form.css"/>
 
@@ -85,6 +85,26 @@
       <h2>小贴士</h2>
       <textarea name="tips" id="tips" rows="4"></textarea>
 
+      <h2>标签</h2>
+
+      <div id="tag-selector">
+        <div class="show-tag">
+          <template repeat="{{tags}}">
+            <div class="tag"><span class="content">{{}}</span><span class="tag-triangle"></span><span
+              class="cancel">x</span></div>
+          </template>
+        </div>
+        <paper-input label="填写标签(多个标签用空格隔开)" class="tag-input" on-blur="{{addInputTags}}"></paper-input>
+        <div class="pop-tag" on-change="{{checkboxTagsChange}}">
+          <template repeat="{{popTags}}">
+            <core-label>
+              <div class="tag-label">{{}}</div>
+              <paper-checkbox value="{{}}" for></paper-checkbox>
+            </core-label>
+          </template>
+        </div>
+      </div>
+
       <div class="submit-btn">
         <paper-button id="form-submit" on-tap="{{submitForm}}" raised>发布</paper-button>
       </div>
@@ -109,21 +129,23 @@
         recipePicUrl: '',
         mainPicUrl: '',
         steps: [
-          {step_content: '', uploading: false, step_pic:'http://cp1.douguo.net/upload/caiku/a/5/c/200_a5485cfc63563104404da9dbd4495a4c.jpg'},
-          {step_content: '', uploading: false, step_pic:''},
-          {step_content: '', uploading: false, step_pic:''}
+          {step_content: '', uploading: false, step_pic: ''},
+          {step_content: '', uploading: false, step_pic: ''},
+          {step_content: '', uploading: false, step_pic: ''}
         ],
         ingredients: [
           {food_name: '', food_quantity: ''},
           {food_name: '', food_quantity: ''}
         ],
         mainPicUploading: false,
+        tags: [],
+        popTags: [],
 
         upload: function (url, paprams, cb) {
           var xhr = new XMLHttpRequest();
           var formData = new FormData();
 
-          for (var k in paprams){
+          for (var k in paprams) {
             formData.append(k, paprams[k]);
           }
 
@@ -145,7 +167,7 @@
             if (this.status > 299) console.log('upload fail:' + this.status + '  ' + this.statusText);
             else {
               data = JSON.parse(this.response);
-              if(!this.uuid) this.uuid = data.uuid;
+              if (!this.uuid) this.uuid = data.uuid;
             }
             self.mainPicUploading = false;
           })
@@ -159,13 +181,11 @@
             'uuid': this.uuid,
             'index': index
           }, function (e) {
-            console.log(e,this);
             if (this.status > 299) console.log('upload fail:' + this.status + '  ' + this.statusText);
             else {
               data = JSON.parse(this.response);
-              if(!this.uuid) this.uuid = data.uuid;
+              if (!this.uuid) this.uuid = data.uuid;
             }
-            console.log(self);
             self.steps[index - 1].uploading = false;
           });
         },
@@ -173,8 +193,6 @@
         ready: function () {
           this.ingredientsItem = this.$.ingredients.children;
           this.stepItems = this.$.steps.children;
-
-          console.log(this.recipeFormUrl);
         },
 
         submitForm: function () {
@@ -265,6 +283,46 @@
           if (index === -1) return;
 
           this.ingredients = this.ingredients.slice(0, index - 1).concat(this.ingredients.slice(index, this.ingredients.length));
+        },
+
+        _removeDulTag: function () {
+          var tags = this.tags;
+          var tmp = [];
+
+          if(tags.length < 2) return;
+
+          tmp.push(tags[0]);
+          for (var i = 1; i < tags.length; i++)
+            if (tags[i] !== tags[i - 1]) tmp.push(this.tags[i]);
+
+          this.tags = tmp;
+        },
+
+        addInputTags: function (ev, detail, sender) {
+          var value = sender.value.trim().replace(/ +/g, ' ');
+          if (value === '') return;
+
+          this.tags = this.tags.concat(value.split(' ')).sort();
+          this._removeDulTag();
+          sender.value = '';
+        },
+
+        checkboxTagsChange: function(ev, detail, sender){
+          var checkbox = ev.path[0];
+          var value = checkbox.getAttribute("value");
+          var i;
+
+          if(checkbox.checked){
+            for(i in this.tags)
+              if(this.tags[i] === value) return;
+
+            this.tags.push(value);
+          }else{
+            for(i in this.tags)
+              if(this.tags[i] === value) break;
+
+            this.tags = this.tags.slice(0, i).concat(this.tags.slice(i+1, this.tags.length));
+          }
         }
       });
     })();

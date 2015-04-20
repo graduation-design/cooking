@@ -346,6 +346,64 @@ paper-input {
   padding: 8px 10px;
 }
 
+#tag-selector .tag {
+  display: inline-block;
+  vertical-align: top;
+  cursor:  pointer;
+}
+
+#tag-selector .tag .content {
+  display: inline-block;
+  vertical-align: top;
+  background-color: #ffebd7;
+  color: #d9c4b0;
+  height: 30px;
+  line-height: 30px;
+  padding: 0 10px;
+}
+
+#tag-selector .tag .tag-triangle {
+  display: inline-block;
+  height: 0;
+  width: 0;
+  border-style: solid;
+  border-width: 15px 20px;
+  border-color: transparent transparent transparent #ffebd7;
+}
+
+#tag-selector .tag .cancel {
+  display: inline-block;
+  vertical-align: top;
+  height: 30px;
+  line-height: 30px;
+  color: #d9c4b0;
+  margin-left: -40px;
+}
+
+#tag-selector .tag-input {
+  width: 100%;
+}
+
+#tag-selector core-label {
+  display: inline-block;
+  height: 48px;
+  margin-right: 26px;
+  white-space: nowrap;
+}
+
+#tag-selector .tag-label {
+  display: inline-block;
+  vertical-align: top;
+  height: 48px;
+  line-height: 46px;
+  cursor: pointer;
+}
+
+#tag-selector paper-checkbox {
+  vertical-align: top;
+  padding: 15px 0;
+}
+
 .submit-btn {
   text-align: center;
   margin-top: 20px;
