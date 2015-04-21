@@ -1,6 +1,11 @@
-<polymer-element name="upload-form" attributes="recipeFormUrl recipePicUrl popTags">
+<polymer-element name="upload-form" attributes="recipeFormUrl recipePicUrl popTags getUuidUrl">
   <template>
     <link rel="stylesheet" href="upload-form.css"/>
+
+    <core-ajax
+      auto
+      url="[[getUuidUrl]]"
+      response="{{uuid}}"></core-ajax>
 
     <form action="{{recipeFormUrl}}" method="post" id="form">
       <paper-input id="cookbook-title" label="菜谱名称" floatinglabel value="{{cookbookTitle}}"></paper-input>
@@ -181,7 +186,6 @@
             if (this.status > 299) console.log('upload fail:' + this.status + '  ' + this.statusText);
             else {
               data = JSON.parse(this.response);
-              if (!this.uuid) this.uuid = data.uuid;
             }
             self.mainPicUploading = false;
           })
@@ -198,7 +202,6 @@
             if (this.status > 299) console.log('upload fail:' + this.status + '  ' + this.statusText);
             else {
               data = JSON.parse(this.response);
-              if (!this.uuid) this.uuid = data.uuid;
             }
             self.steps[index - 1].uploading = false;
           });

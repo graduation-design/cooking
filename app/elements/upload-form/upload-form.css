@@ -354,7 +354,7 @@ paper-radio-group {
 #tag-selector .tag {
   display: inline-block;
   vertical-align: top;
-  cursor:  pointer;
+  cursor: pointer;
 }
 
 #tag-selector .tag .content {
