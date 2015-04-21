@@ -76,6 +76,11 @@ paper-input {
   color: #333;
 }
 
+paper-radio-group {
+  width: 100%;
+  text-align: center;
+}
+
 #cookbook-title {
   width: 618px;
   border-radius: 3px;

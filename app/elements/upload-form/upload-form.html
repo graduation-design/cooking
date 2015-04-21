@@ -29,6 +29,14 @@
       </div>
       <textarea name="introduction" id="introduction" cols="30" rows="10" placeholder="介绍介绍你的美食吧，相关故事也可以哦"></textarea>
 
+      <h2>烹饪时长</h2>
+      <paper-radio-group selected="{{time}}">
+        <paper-radio-button name="less_than_10_min" label="少于10分钟" ></paper-radio-button>
+        <paper-radio-button name="between_10_and_30" label="10到30分钟" ></paper-radio-button>
+        <paper-radio-button name="between_30_and_60" label="30到60分钟" ></paper-radio-button>
+        <paper-radio-button name="more_than_60_min" label="一个小时以上" ></paper-radio-button>
+      </paper-radio-group>
+
       <h2>食材</h2>
       <ul id="ingredients">
         <template repeat="{{ingredients}}">
@@ -90,12 +98,13 @@
       <div id="tag-selector">
         <div class="show-tag">
           <template repeat="{{tags}}">
-            <div class="tag"><span class="content">{{}}</span><span class="tag-triangle"></span><span
+            <div class="tag" data-value="{{}}" on-tap="{{cancelTag}}"><span class="content">{{}}</span><span
+              class="tag-triangle"></span><span
               class="cancel">x</span></div>
           </template>
         </div>
         <paper-input label="填写标签(多个标签用空格隔开)" class="tag-input" on-blur="{{addInputTags}}"></paper-input>
-        <div class="pop-tag" on-change="{{checkboxTagsChange}}">
+        <div id="pop-tag" class="pop-tag" on-change="{{checkboxTagsChange}}">
           <template repeat="{{popTags}}">
             <core-label>
               <div class="tag-label">{{}}</div>
@@ -112,9 +121,13 @@
       <div id="hidden-input">
         <input type="text" name="uuid" value="{{uuid}}"/>
         <input type="text" name="cookbook_title" value="{{cookbookTitle}}"/>
+        <input type="text" name="time" value="{{time}}"/>
         <template repeat="{{ingredients}}">
           <input type="text" name="food_name" value="{{food_name}}"/>
           <input type="text" name="food_quantity" value="{{food_quantity}}"/>
+        </template>
+        <template repeat="{{tags}}">
+          <input type="text" name="tags" value="{{}}"/>
         </template>
       </div>
 
@@ -140,6 +153,7 @@
         mainPicUploading: false,
         tags: [],
         popTags: [],
+        time: 'less_than_10_min',
 
         upload: function (url, paprams, cb) {
           var xhr = new XMLHttpRequest();
@@ -289,7 +303,7 @@
           var tags = this.tags;
           var tmp = [];
 
-          if(tags.length < 2) return;
+          if (tags.length < 2) return;
 
           tmp.push(tags[0]);
           for (var i = 1; i < tags.length; i++)
@@ -307,22 +321,37 @@
           sender.value = '';
         },
 
-        checkboxTagsChange: function(ev, detail, sender){
+        checkboxTagsChange: function (ev, detail, sender) {
           var checkbox = ev.path[0];
           var value = checkbox.getAttribute("value");
           var i;
 
-          if(checkbox.checked){
-            for(i in this.tags)
-              if(this.tags[i] === value) return;
+          if (checkbox.checked) {
+            for (i in this.tags)
+              if (this.tags[i] === value) return;
 
             this.tags.push(value);
-          }else{
-            for(i in this.tags)
-              if(this.tags[i] === value) break;
+          } else {
+            for (i in this.tags)
+              if (this.tags[i] === value) break;
 
-            this.tags = this.tags.slice(0, i).concat(this.tags.slice(i+1, this.tags.length));
+            this.tags = this.tags.slice(0, i).concat(this.tags.slice(i + 1, this.tags.length));
           }
+        },
+        cancelTag: function (ev, detail, sender) {
+          var value = sender.getAttribute('data-value');
+          var pCheckbox = this.$['pop-tag'].querySelectorAll('paper-checkbox');
+          var i;
+          for (i in  this.tags)
+            if (this.tags[i] === value) break;
+
+          this.tags = this.tags.slice(0, i).concat(this.tags.slice(i + 1, this.tags.length));
+
+          for (i = 0; i < pCheckbox.length; i++)
+            if (pCheckbox[i].getAttribute('value') === value) {
+              pCheckbox[i].checked = false;
+              break;
+            }
         }
       });
     })();
