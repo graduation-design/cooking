@@ -1,0 +1,1 @@
+!function(r){"use strict";var t=r.querySelector("#login");t.submitForm=function(){for(var r=this.$["login-form"],t=r.querySelectorAll("paper-input-decorator"),i=!0,o=0;o<t.length;o++)t[o].validate(),i=!t[o].isInvalid;i&&this.$["login-form"].submit()}}(wrap(document));

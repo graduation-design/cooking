@@ -80,3 +80,19 @@ ul {
 .share {
   background-position: 22px -481px;
 }
+
+#unlog-display {
+  text-align: center;
+  margin-top: 60px;
+}
+
+#unlog-display .login-btn {
+  margin-top: 10px;
+  background-color: #d9c4b0;
+  color: #fff;
+}
+
+#unlog-display .login-btn a {
+  color: #fff;
+  text-decoration: none;
+}
