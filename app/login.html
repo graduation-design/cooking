@@ -42,7 +42,7 @@
             floatingLabel
             label="用户名"
             error="用户名不能为空">
-            <input name="user_name" type="text" required/>
+            <input name="user_id" type="text" required/>
           </paper-input-decorator>
           <paper-input-decorator
             floatingLabel
@@ -51,7 +51,7 @@
             <input name="password" type="password" required/>
           </paper-input-decorator>
           <div class="login-btn">
-            <paper-button raised on-tap="{{submitForm}}">登录</paper-button>
+            <span class="register-note">还没有账号？马上<a href="register.html">注册</a></span><paper-button raised on-tap="{{submitForm}}">登录</paper-button>
           </div>
         </form>
       </paper-shadow>

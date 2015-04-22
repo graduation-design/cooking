@@ -162,7 +162,8 @@
         time: 'less_than_10_min',
 
         setUuid: function(ev, detail){
-          this.uuid = detail.uuid;
+          console.log(ev);
+          this.uuid = detail.response.uuid;
         },
 
         upload: function (url, paprams, cb) {

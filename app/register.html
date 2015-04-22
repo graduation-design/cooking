@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>注册</title>
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+  <!-- build:css styles/main.css -->
+  <link rel="stylesheet" href="styles/main.css">
+  <!-- endbuild-->
+
+  <!-- build:css styles/register.css -->
+  <link rel="stylesheet" href="styles/register.css">
+  <!-- endbuild-->
+
+  <!-- build:js bower_components/webcomponentsjs/webcomponents.min.js -->
+  <script src="bower_components/webcomponentsjs/webcomponents.js"></script>
+  <!-- endbuild -->
+
+  <!-- will be replaced with elements/elements.vulcanized.html -->
+  <link rel="import" href="elements/elements.html">
+  <!-- endreplace-->
+</head>
+
+<body unresolved>
+<template is="auto-binding" id="register">
+  <top-nav>
+    <nav-item url="#">首页</nav-item>
+    <nav-item url="#">菜谱</nav-item>
+    <nav-item url="#">朋友圈</nav-item>
+  </top-nav>
+  <div class="main-wrapper">
+    <div id="form-field">
+      <paper-shadow>
+        <h1>注册</h1>
+
+        <form action="register" method="post" id="register-form">
+          <div hidden?="{{moreDetail}}">
+            <paper-input-decorator
+              floatingLabel
+              label="用户名"
+              error="用户名不能为空">
+              <input name="user_id" type="text" required/>
+            </paper-input-decorator>
+            <paper-input-decorator
+              floatingLabel
+              label="密码"
+              error="密码不能为空">
+              <input name="password" type="password" required/>
+            </paper-input-decorator>
+            <paper-input-decorator
+              floatingLabel
+              label="确认密码"
+              error="密码验证不能为空">
+              <input name="password-confirm" type="password" required/>
+            </paper-input-decorator>
+            <paper-input-decorator
+              floatingLabel
+              label="昵称"
+              error="请填写昵称">
+              <input name="user_name" type="text" required/>
+            </paper-input-decorator>
+            <div class="btn">
+              <paper-button raised on-tap="{{showDetail}}">下一步</paper-button>
+            </div>
+          </div>
+          <div hidden?="{{!moreDetail}}">
+            <div class="btn">
+              <paper-button raised on-tap="{{submitForm}}">注册</paper-button>
+            </div>
+          </div>
+        </form>
+      </paper-shadow>
+    </div>
+  </div>
+</template>
+<!-- build:js scripts/register.js -->
+<script src="scripts/register.js"></script>
+<!-- endbuild-->
+</body>
+
+</html>

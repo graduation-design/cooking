@@ -7,8 +7,9 @@ h1 {
 
 #form-field {
   width: 400px;
-  margin: 100px auto 0;
-  background: #fff;
+  margin: 130px auto 0;
+  background: #fafafa;
+  transition: all 0.4s cubic-bezier(.18,.42,.5,1.64);
 }
 
 #login-form {
@@ -17,7 +18,7 @@ h1 {
 
 .login-btn {
   margin-top: 10px;
-  text-align: center;
+  text-align: right;
 }
 
 .login-btn paper-button {

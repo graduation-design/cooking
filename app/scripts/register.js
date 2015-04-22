@@ -1,8 +1,15 @@
 (function (document) {
   'use strict';
-  var login = document.querySelector('#login');
-  login.submitForm = function (ev) {
-    var form = this.$['login-form'];
+  var register = document.querySelector('#register');
+
+  register.moreDetail = false;
+
+  register.showDetail = function(){
+    this.moreDetail = true;
+  };
+
+  register.submitForm = function (ev) {
+    var form = this.$['register-form'];
     var inputs = form.querySelectorAll('paper-input-decorator');
     var submitable = true;
 
@@ -15,8 +22,8 @@
       this.$['login-form'].submit();
   };
 
-  login.addEventListener('template-bound', function() {
-    this.$['form-field'].style.transform = 'translateY(-30px)';
+  register.addEventListener('template-bound', function() {
+    //console.log(this.moreDetail);
   });
 
 })(wrap(document));
