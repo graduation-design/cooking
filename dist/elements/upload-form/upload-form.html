@@ -37,10 +37,10 @@
 
       <h2>烹饪时长</h2>
       <paper-radio-group selected="{{time}}">
-        <paper-radio-button name="less_than_10_min" label="少于10分钟" ></paper-radio-button>
-        <paper-radio-button name="between_10_and_30" label="10到30分钟" ></paper-radio-button>
-        <paper-radio-button name="between_30_and_60" label="30到60分钟" ></paper-radio-button>
-        <paper-radio-button name="more_than_60_min" label="一个小时以上" ></paper-radio-button>
+        <paper-radio-button name="less_than_10_min" label="少于10分钟"></paper-radio-button>
+        <paper-radio-button name="between_10_and_30" label="10到30分钟"></paper-radio-button>
+        <paper-radio-button name="between_30_and_60" label="30到60分钟"></paper-radio-button>
+        <paper-radio-button name="more_than_60_min" label="一个小时以上"></paper-radio-button>
       </paper-radio-group>
 
       <h2>食材</h2>
@@ -161,7 +161,7 @@
         popTags: [],
         time: 'less_than_10_min',
 
-        setUuid: function(ev, detail){
+        setUuid: function (ev, detail) {
           this.uuid = detail.response.uuid;
         },
 

@@ -5,6 +5,9 @@
     <file url="file://$PROJECT_DIR$/app/elements/cookery-pit/cookery-pit.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/elements/elements.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/elements/id-card/id-card.css" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/elements/knowledge-pit/knowledge-pit.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/elements/location-selector/location-selector.css" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/elements/location-selector/location-selector.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/elements/timeline-item/timeline_item.css" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/elements/timeline-item/timeline_item.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/elements/upload-form/upload-form.css" charset="UTF-8" />

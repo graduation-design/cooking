@@ -1,0 +1,51 @@
+<polymer-element name="location-selector" attributes="data">
+  <template>
+    <link rel="stylesheet" href="location-selector.css">
+    <paper-dropdown-menu
+      label="省份/直辖市"
+      on-core-select="{{changeProvince}}">
+      <paper-dropdown class="dropdown">
+        <core-menu class="menu">
+          <template repeat="{{key,index in data.provinces}}">
+            <span data-index="{{index}}" class="provinces-name">{{key.name}}</span>
+          </template>
+        </core-menu>
+      </paper-dropdown>
+    </paper-dropdown-menu>
+    <paper-dropdown-menu
+      label="市/县"
+      on-core-select="{{changeCity}}">
+      <paper-dropdown class="dropdown">
+        <core-menu class="menu">
+          <template if="{{provinceSelected}}">
+            <template repeat="{{key, index in data.provinces[provinceIndex].cities}}">
+              <span class="provinces-name">{{key[index+1]}}</span>
+            </template>
+          </template>
+        </core-menu>
+      </paper-dropdown>
+    </paper-dropdown-menu>
+  </template>
+  <script>
+    (function () {
+      Polymer({
+        value: '',
+        data: {},
+        provinceSelected: false,
+        provinceIndex: 0,
+        changeProvince: function (ev, detail) {
+          var index = detail.item.getAttribute('data-index');
+          if (detail.isSelected) {
+            this.provinceSelected = true;
+            this.provinceIndex = index;
+          }
+        },
+        changeCity: function (ev, detail) {
+          if (detail.isSelected) {
+            this.value = this.data.provinces[this.provinceIndex].name + ',' + detail.item.innerText;
+          }
+        }
+      });
+    })();
+  </script>
+</polymer-element>

@@ -41,9 +41,9 @@
           <div hidden?="{{moreDetail}}">
             <paper-input-decorator
               floatingLabel
-              label="用户名"
-              error="用户名不能为空">
-              <input name="user_id" type="text" required/>
+              label="邮箱"
+              error="无效的邮箱">
+              <input name="user_id" type="email" required/>
             </paper-input-decorator>
             <paper-input-decorator
               floatingLabel
@@ -68,6 +68,24 @@
             </div>
           </div>
           <div hidden?="{{!moreDetail}}">
+            <paper-input-decorator
+              floatingLabel
+              label="个性签名">
+              <input name="sign" type="text"/>
+            </paper-input-decorator>
+            <paper-input-decorator
+              floatingLabel
+              label="爱好">
+              <input name="favor" type="text"/>
+            </paper-input-decorator>
+            <h2>性别</h2>
+            <paper-radio-group selected="man">
+              <paper-radio-button name="man" label="男"></paper-radio-button>
+              <paper-radio-button name="woman" label="女"></paper-radio-button>
+            </paper-radio-group>
+            <h2>地区</h2>
+            <location-selector data="{{locationData}}"></location-selector>
+
             <div class="btn">
               <paper-button raised on-tap="{{submitForm}}">注册</paper-button>
             </div>
