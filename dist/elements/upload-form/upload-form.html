@@ -191,6 +191,7 @@
             if (this.status > 299) console.log('upload fail:' + this.status + '  ' + this.statusText);
             else {
               data = JSON.parse(this.response);
+              this.mainPicUrl = data.url;
             }
             self.mainPicUploading = false;
           })
@@ -205,9 +206,11 @@
             'uuid': this.uuid,
             'index': index
           }, function (e) {
+            var data = {};
             if (this.status > 299) console.log('upload fail:' + this.status + '  ' + this.statusText);
             else {
               data = JSON.parse(this.response);
+              self.steps[index - 1].step_pic = data.url;
             }
             self.steps[index - 1].uploading = false;
           });
