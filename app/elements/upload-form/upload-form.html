@@ -192,6 +192,7 @@
             else {
               data = JSON.parse(this.response);
               this.mainPicUrl = data.url;
+              console.log(this.mainPicUrl);
             }
             self.mainPicUploading = false;
           })
