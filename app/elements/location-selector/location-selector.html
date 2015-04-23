@@ -18,8 +18,8 @@
       <paper-dropdown class="dropdown">
         <core-menu class="menu">
           <template if="{{provinceSelected}}">
-            <template repeat="{{key, index in data.provinces[provinceIndex].cities}}">
-              <span class="provinces-name">{{key[index+1]}}</span>
+            <template repeat="{{data.provinces[provinceIndex].cities}}">
+              <span class="provinces-name">{{}}</span>
             </template>
           </template>
         </core-menu>
