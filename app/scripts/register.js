@@ -32,6 +32,7 @@
   };
 
   register.addEventListener('template-bound', function() {
+    this.$['form-field'].style.transform = 'translateY(-30px)';
   });
 
 })(wrap(document));

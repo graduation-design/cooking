@@ -18,8 +18,9 @@ h2 {
 
 #form-field {
   width: 500px;
-  margin: 0 auto;
+  margin: 100px auto 0;
   background-color: #fafafa;
+  transition: all 0.4s cubic-bezier(.18,.42,.5,1.64);
 }
 
 #register-form {
