@@ -133,7 +133,7 @@
           <input type="text" name="food_quantity" value="{{food_quantity}}"/>
         </template>
         <template repeat="{{tags}}">
-          <input type="text" name="tags" value="{{}}"/>
+          <input type="text" name="food_class" value="{{}}"/>
         </template>
       </div>
 
@@ -191,7 +191,7 @@
             if (this.status > 299) console.log('upload fail:' + this.status + '  ' + this.statusText);
             else {
               data = JSON.parse(this.response);
-              self.mainPicUrl = data.url;
+              self.mainPicUrl = data.url + '?t=' + new Date().getTime();
             }
 
             self.mainPicUploading = false;
@@ -211,7 +211,7 @@
             if (this.status > 299) console.log('upload fail:' + this.status + '  ' + this.statusText);
             else {
               data = JSON.parse(this.response);
-              self.steps[index - 1].step_pic = data.url;
+              self.steps[index - 1].step_pic = data.url + '?t=' + new Date().getTime();
             }
             self.steps[index - 1].uploading = false;
           });

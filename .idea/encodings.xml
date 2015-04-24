@@ -27,5 +27,6 @@
     <file url="file://$PROJECT_DIR$/app/styles/register.css" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/styles/upload_cookbook.css" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/gulpfile.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/push.sh" charset="UTF-8" />
   </component>
 </project>
