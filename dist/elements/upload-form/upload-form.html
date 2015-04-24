@@ -191,9 +191,9 @@
             if (this.status > 299) console.log('upload fail:' + this.status + '  ' + this.statusText);
             else {
               data = JSON.parse(this.response);
-              this.mainPicUrl = data.url;
-              console.log(this.mainPicUrl);
+              self.mainPicUrl = data.url;
             }
+
             self.mainPicUploading = false;
           })
         },
