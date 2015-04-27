@@ -1,0 +1,41 @@
+<polymer-element name="comment-item" attributes="">
+  <template>
+    <style>
+      :host {
+        display: block;
+        padding: 6px 0;
+      }
+      .avatar{
+        display: inline-block;
+        vertical-align: top;
+      }
+      .avatar img {
+        width: 80px;
+        height: 80px;
+        -webkit-border-radius: 100%;
+        -moz-border-radius: 100%;
+        border-radius: 100%;
+      }
+      #comment_info{
+        display: inline-block;
+        vertical-align: top;
+      }
+    </style>
+    <div class="avatar">
+      <img src="http://lorempixel.com/80/80"/>
+    </div>
+    <div id="comment_info">
+      <div class="user_name">
+        <span class="name">昵称不能为呵呵</span>:
+      </div>
+      <div class="comment_content">
+        啊哈哈
+      </div>
+    </div>
+  </template>
+  <script>
+    (function () {
+      Polymer({});
+    })();
+  </script>
+</polymer-element>

@@ -1,0 +1,21 @@
+:host {
+  display: block;
+  padding: 10px;
+}
+
+#comment_input {
+  display: inline-block;
+  width: 494px;
+}
+
+#send_btn {
+  vertical-align: bottom;
+}
+
+::content comment-item {
+  border-top: 1px solid #ccc;
+}
+
+::content comment-item:first-child {
+  border-top: none;
+}

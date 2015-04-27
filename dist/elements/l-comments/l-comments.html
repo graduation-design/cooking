@@ -1,0 +1,17 @@
+<polymer-element name="l-comments" attributes="">
+  <template>
+    <link rel="stylesheet" href="l-comments.css">
+    <content select="comment-item"></content>
+    <div id="comment_input">
+      <paper-input-decorator label="我想说">
+        <input type="text"/>
+      </paper-input-decorator>
+    </div>
+    <paper-button id="send_btn" raised>发送</paper-button>
+  </template>
+  <script>
+    (function () {
+      Polymer({});
+    })();
+  </script>
+</polymer-element>
