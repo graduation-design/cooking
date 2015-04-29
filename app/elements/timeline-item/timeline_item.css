@@ -11,26 +11,27 @@
 .avatar-side {
   display: inline-block;
   vertical-align: top;
-  width: 88px;
+  width: 100px;
   text-align: center;
 }
 
 .avatar-pic {
   width: 80px;
   height: 80px;
-  margin-top: 4px;
+  margin-top: 10px;
 }
 
 .info-side {
   display: inline-block;
   vertical-align: top;
-  width: 552px;
+  width: 528px;
   font-size: 14px;
+  padding-left: 12px;
 }
 
 .user-name {
-  padding-left: 10px;
-  padding-top: 4px;
+  padding-left: 0;
+  padding-top: 10px;
 }
 
 .user-name span {
@@ -39,10 +40,57 @@
 }
 
 .post-content {
-  padding: 10px 10px 0;
+  padding: 10px 0 0;
 }
 
 .main-pic {
-  text-align: center;
   padding: 10px 0;
+}
+
+ul {
+  list-style: none;
+  font-size: 0;
+  margin: 0;
+  padding: 0;
+}
+
+#toolbar {
+  border-top: 1px solid #efefef;
+}
+
+#toolbar li{
+  display: inline-block;
+  width: 25%;
+  overflow: hidden;
+  position: relative;
+  font-size: 14px;
+  text-align: center;
+  cursor: pointer;
+  padding: 10px 0;
+}
+
+#toolbar li:after {
+  content: '';
+  height: 20px;
+  border-left: 1px solid #e0e0e0;
+  position: absolute;
+  right: 0;
+  top: 8px;
+}
+
+#toolbar li:last-child:after{
+  border: none;
+}
+
+#toolbar paper-ripple {
+  color: #ccc;
+}
+
+#comments {
+  border-top: 1px solid #efefef;
+}
+
+#comment_input {
+  width: 500px;
+  margin: 0 auto;
 }
