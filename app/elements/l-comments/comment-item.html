@@ -1,4 +1,4 @@
-<polymer-element name="comment-item" attributes="">
+<polymer-element name="comment-item" attributes="avatar user_name timestamp">
   <template>
     <style>
       :host {
@@ -49,11 +49,11 @@
     </div>
     <div id="comment_info">
       <div class="user_name">
-        <a href="javascript: void(0);" class="name">昵称不能为呵呵</a>:
-        <span class="commit_time">15年4月24日 11:23</span>
+        <a href="javascript: void(0);" class="name">{{user_name}}</a>:
+        <span class="commit_time">{{timestamp}}</span>
       </div>
       <div class="comment_content">
-        啊哈哈
+        <content></content>
       </div>
     </div>
   </template>

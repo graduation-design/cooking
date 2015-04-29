@@ -1,17 +1,66 @@
 <polymer-element name="l-comments" attributes="">
   <template>
     <link rel="stylesheet" href="l-comments.css">
-    <content select="comment-item"></content>
+    <core-ajax
+      id="ajax"
+      url="#"
+      params="{{ajaxParams}}"></core-ajax>
+    <div class="comments_list">
+      <template repeat="{{comments}}">
+        <comment-item
+          avatar="{{avatar}}"
+          user_name="{{user_name}}"
+          timestamp="{{timestamp}}">{{content}}</comment-item>
+      </template>
+    </div>
+
     <div id="comment_input">
       <paper-input-decorator label="我想说">
-        <input type="text"/>
+        <input type="text" value="{{ajaxParams.comment}}"/>
       </paper-input-decorator>
     </div>
-    <paper-button id="send_btn" raised>发送</paper-button>
+    <paper-button
+      raised
+      id="send_btn"
+      on-tap="{{sendComment}}">发送
+    </paper-button>
   </template>
   <script>
     (function () {
-      Polymer({});
+      Polymer({
+        comments:[
+          {
+            avatar:"http://lorempixel.com/80/80",
+            user_name: "nick_name",
+            timestamp: "15年4月29日",
+            content: "啊哈哈哈哈哈！！！"
+          },{
+            avatar:"http://lorempixel.com/80/80",
+            user_name: "nick_name",
+            timestamp: "15年4月29日",
+            content: "啊哈哈哈哈哈！！！"
+          },{
+            avatar:"http://lorempixel.com/80/80",
+            user_name: "nick_name",
+            timestamp: "15年4月29日",
+            content: "啊哈哈哈哈哈！！！"
+          },{
+            avatar:"http://lorempixel.com/80/80",
+            user_name: "nick_name",
+            timestamp: "15年4月29日",
+            content: "啊哈哈哈哈哈！！！"
+          }
+        ],
+        ajaxParams: {
+          comment: ""
+        },
+        sendComment: function () {
+          if (this.ajaxParams.comment === "") return;
+
+          this.$.ajax.go();
+          this.ajaxParams.comment = "";
+        }
+      });
     })();
   </script>
 </polymer-element>

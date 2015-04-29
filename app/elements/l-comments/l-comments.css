@@ -10,12 +10,56 @@
 
 #send_btn {
   vertical-align: bottom;
+  background-color: #d9c4b0;
+  color: #fff;
 }
 
-::content comment-item {
-  border-top: 1px solid #ccc;
+comment-item {
+  border-bottom: 1px solid #ccc;
 }
 
-::content comment-item:first-child {
-  border-top: none;
+comment-item:last-child {
+  border-bottom: none;
+}
+
+paper-input-decorator /deep/ ::-webkit-input-placeholder {
+  color: #d9c4b0;
+}
+
+paper-input-decorator /deep/ ::-moz-placeholder {
+  color: #d9c4b0;
+}
+
+paper-input-decorator /deep/ :-ms-input-placeholder {
+  color: #d9c4b0;
+}
+
+paper-input-decorator /deep/ .label-text,
+paper-input-decorator /deep/ .error {
+  color: #d9c4b0;
+}
+
+paper-input-decorator /deep/ .unfocused-underline {
+  background-color: #d9c4b0;
+}
+
+paper-input-decorator /deep/ .floated-label #floatedLabelText {
+  color: #e74c3c;
+}
+
+paper-input-decorator /deep/ .focused-underline {
+  background-color: #e74c3c;
+}
+
+paper-input-decorator.invalid /deep/ .floated-label .label-text,
+paper-input-decorator /deep/ .error {
+  color: #f06292;
+}
+
+paper-input-decorator.invalid /deep/ .focused-underline {
+  background-color: #f06292;
+}
+
+paper-input-decorator {
+  color: #333;
 }
