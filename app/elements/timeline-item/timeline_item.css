@@ -3,6 +3,48 @@
   background-color: #fff;
 }
 
+paper-input-decorator /deep/ ::-webkit-input-placeholder {
+  color: #d9c4b0;
+}
+
+paper-input-decorator /deep/ ::-moz-placeholder {
+  color: #d9c4b0;
+}
+
+paper-input-decorator /deep/ :-ms-input-placeholder {
+  color: #d9c4b0;
+}
+
+paper-input-decorator /deep/ .label-text,
+paper-input-decorator /deep/ .error {
+  color: #d9c4b0;
+}
+
+paper-input-decorator /deep/ .unfocused-underline {
+  background-color: #d9c4b0;
+}
+
+paper-input-decorator /deep/ .floated-label #floatedLabelText {
+  color: #e74c3c;
+}
+
+paper-input-decorator /deep/ .focused-underline {
+  background-color: #e74c3c;
+}
+
+paper-input-decorator.invalid /deep/ .floated-label .label-text,
+paper-input-decorator /deep/ .error {
+  color: #f06292;
+}
+
+paper-input-decorator.invalid /deep/ .focused-underline {
+  background-color: #f06292;
+}
+
+paper-input-decorator {
+  color: #333;
+}
+
 #wrapper {
   min-height: 200px;
   font-size: 0;
@@ -34,13 +76,15 @@
   padding-top: 10px;
 }
 
-.user-name span {
+.user-name a {
   color: #666;
   font-weight: bold;
+  text-decoration: none;
 }
 
 .post-content {
   padding: 10px 0 0;
+  line-height: 20px;
 }
 
 .main-pic {
@@ -88,9 +132,70 @@ ul {
 
 #comments {
   border-top: 1px solid #efefef;
+  background-color: #f2f2f5;
 }
 
-#comment_input {
+#comments .wrapper {
   width: 500px;
   margin: 0 auto;
+}
+
+.my_comment {
+  position: relative;
+}
+
+.my_comment .my_avatar {
+  position: absolute;
+  top: 8px;
+  left: -36px;
+}
+
+#send_comment_btn {
+  text-align: right;
+}
+
+#send_comment_btn paper-button {
+  height: 24px;
+  line-height: 6px;
+  background-color: #d9c4b0;
+  color: #fff;
+}
+
+#comment_list {
+  font-size: 12px;
+  margin-top: 10px;
+}
+
+#comment_list li {
+  position: relative;
+  padding: 8px 0;
+  border-top: 1px solid #e0e0e0;
+}
+
+#comment_list li:first-child {
+  border-top: none;
+}
+
+#comment_list .avatar {
+  vertical-align: top;
+  width: 30px;
+  height: 30px;
+}
+
+#comment_list .info {
+  display: inline-block;
+  vertical-align: top;
+  width: 466px;
+  line-height: 20px;
+}
+
+#comment_list .info .user_name {
+  color: #eb7350;
+  text-decoration: none;
+}
+
+#comment_list .time {
+  color: #999999;
+  text-align: right;
+  padding-right: 12px;
 }

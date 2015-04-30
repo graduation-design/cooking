@@ -7,7 +7,7 @@
           <img class="avatar-pic" src="{{avatarPic}}"/>
         </div>
         <div class="info-side">
-          <section class="user-name"><span>{{userName}}</span>{{typeTable[type]}}:</section>
+          <section class="user-name"><a href="#">{{userName}}</a>{{typeTable[type]}}:</section>
           <section class="post-content">
             <content></content>
           </section>
@@ -19,28 +19,72 @@
         </div>
       </div>
       <ul id="toolbar">
-        <li><paper-ripple fit></paper-ripple>收藏<span class="num">12</span></li>
-        <li><paper-ripple fit></paper-ripple>分享<span class="num">12</span></li>
-        <li><paper-ripple fit></paper-ripple>评论<span class="num">12</span></li>
-        <li><paper-ripple fit></paper-ripple>赞<span class="num">12</span></li>
+        <li>
+          <paper-ripple fit></paper-ripple>
+          收藏<span class="num">12</span></li>
+        <li>
+          <paper-ripple fit></paper-ripple>
+          分享<span class="num">12</span></li>
+        <li on-tap="{{toggleComments}}">
+          <paper-ripple fit></paper-ripple>
+          评论<span class="num">12</span></li>
+        <li>
+          <paper-ripple fit></paper-ripple>
+          赞<span class="num">12</span></li>
       </ul>
-      <div id="comments">
-        <div class="my_comment">
-          <div id="comment_input">
-            <paper-input-decorator>
-              <paper-autogrow-textarea>
-                <textarea id="my_comment_content"></textarea>
-              </paper-autogrow-textarea>
-            </paper-input-decorator>
+      <template if="{{isShowComments}}">
+        <div id="comments">
+          <div class="wrapper">
+            <div class="my_comment">
+              <img src="http://lorempixel.com/30/30/food" class="my_avatar"/>
+              <div id="comment_input">
+                <paper-input-decorator label="最多能输入280个字">
+                  <paper-autogrow-textarea maxRows="4">
+                    <textarea id="my_comment_content" maxlength="280"></textarea>
+                  </paper-autogrow-textarea>
+                  <paper-char-counter target="my_comment_content"></paper-char-counter>
+                </paper-input-decorator>
+              </div>
+              <div id="send_comment_btn">
+                <paper-button raised>评论</paper-button>
+              </div>
+            </div>
+            <ul id="comment_list">
+              <li>
+                <img class="avatar" src="http://lorempixel.com/30/30"/>
+              <span class="info">
+                <a href="#" class="user_name">王二麻子</a>：<span class="say">蛇精病0.0</span>
+                <div class="time">5月1日</div>
+              </span>
+              </li>
+              <li>
+                <img class="avatar" src="http://lorempixel.com/30/30"/>
+              <span class="info">
+                <a href="#" class="user_name">王二麻子</a>：<span class="say">蛇精病0.0蛇精病0.0蛇精病0.0蛇精病0.0蛇精病0.0蛇精病0.0蛇精病0.0蛇精病0.0蛇精病0.0</span>
+                <div class="time">5月1日</div>
+              </span>
+              </li>
+              <li>
+                <img class="avatar" src="http://lorempixel.com/30/30"/>
+              <span class="info">
+                <a href="#" class="user_name">王二麻子</a>：<span class="say">蛇精病0.0</span>
+                <div class="time">5月1日</div>
+              </span>
+              </li>
+            </ul>
           </div>
         </div>
-      </div>
+      </template>
     </paper-shadow>
 
   </template>
   <script>
     (function () {
       Polymer({
+        isShowComments: false,
+        toggleComments:function(){
+          this.isShowComments = !this.isShowComments;
+        },
         typeTable: {
           sCookbook: "分享了一个菜谱",
           pCookbook: "发表了一个菜谱"
